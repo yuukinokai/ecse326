@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 8, 2019 12:03:55 PM EST" modified="November 8, 2019 2:13:56 PM EST" specVersion="19" urnVersion="1.27" nextGlobalID="794">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 8, 2019 12:03:55 PM EST" modified="November 8, 2019 6:18:09 PM EST" specVersion="21" urnVersion="1.27" nextGlobalID="864">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup7" id="7">
       <scenarios name="ScenarioDef8" id="8"/>
@@ -78,6 +78,9 @@
     <responsibilities name="Use Card" id="723" respRefs="724"/>
     <responsibilities name="Decrease Points" id="772" respRefs="773"/>
     <responsibilities name="Eat" id="791" respRefs="792"/>
+    <responsibilities name="Enter by metro" id="819" respRefs="820"/>
+    <responsibilities name="enter/exit through a connected mall" id="838" respRefs="839"/>
+    <responsibilities name="Enter/Exit through Street" id="853" respRefs="854"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph2" id="2"/>
     <specDiagrams xsi:type="ucm.map:UCMmap" name="FoodCourt" id="3">
       <nodes xsi:type="ucm.map:StartPoint" name="Enter Food Court" id="144" x="146" y="198" succ="//@urndef/@specDiagrams.1/@connections.0">
@@ -504,6 +507,51 @@
       <connections xsi:type="grl:LinkRef" source="137" target="47" link="142">
         <label deltaX="30" deltaY="-30"/>
       </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit by Metro" id="795">
+      <nodes xsi:type="ucm.map:StartPoint" name="ready to enter/exit centre" id="798" x="114" y="237" succ="//@urndef/@specDiagrams.11/@connections.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="entered/exit centre" id="800" x="314" y="237" pred="//@urndef/@specDiagrams.11/@connections.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef820" id="820" x="210" y="237" succ="//@urndef/@specDiagrams.11/@connections.1" pred="//@urndef/@specDiagrams.11/@connections.0" respDef="819">
+        <label deltaX="2" deltaY="30"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="798" target="820"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="820" target="800"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit by Other Mall" id="796">
+      <nodes xsi:type="ucm.map:StartPoint" name="ready to enter/exit centre" id="825" x="168" y="261" succ="//@urndef/@specDiagrams.12/@connections.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="entered/exited centre" id="827" x="368" y="261" pred="//@urndef/@specDiagrams.12/@connections.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef839" id="839" x="268" y="261" succ="//@urndef/@specDiagrams.12/@connections.1" pred="//@urndef/@specDiagrams.12/@connections.0" respDef="838">
+        <label deltaX="3" deltaY="35"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="825" target="839"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="839" target="827"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit by Street" id="797">
+      <nodes xsi:type="ucm.map:StartPoint" name="ready to enter/exit centre" id="844" x="195" y="222" succ="//@urndef/@specDiagrams.13/@connections.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="entered/exited centre" id="846" x="395" y="222" pred="//@urndef/@specDiagrams.13/@connections.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef854" id="854" x="295" y="222" succ="//@urndef/@specDiagrams.13/@connections.1" pred="//@urndef/@specDiagrams.13/@connections.0" respDef="853">
+        <label deltaX="3" deltaY="31"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="844" target="854"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="854" target="846"/>
     </specDiagrams>
   </urndef>
   <metadata name="_Use0to100EvaluationRange" value="false"/>
