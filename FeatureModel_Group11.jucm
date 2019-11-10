@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 9, 2019 9:39:14 PM EST" modified="November 9, 2019 9:39:14 PM EST" specVersion="38" urnVersion="1.27" nextGlobalID="2825">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 9, 2019 9:39:14 PM EST" modified="November 10, 2019 12:02:26 PM EST" specVersion="39" urnVersion="1.27" nextGlobalID="2827">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup7" id="7">
       <scenarios name="ScenarioDef8" id="8"/>
@@ -15,54 +15,122 @@
     <variables name="PrivateConnectionSuccessful" id="1060"/>
   </ucmspec>
   <grlspec>
-    <intElements xsi:type="fm:Feature" name="Montreal Eaton Center" id="13" linksDest="27 30 31 32" type="Task" refs="14"/>
+    <intElements xsi:type="fm:Feature" name="Montreal Eaton Center" id="13" linksDest="27 30 31 32" type="Task" refs="14">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Entering/Exiting" fromLinks="//@urnLinks.9" id="15" linksDest="120 117 118" linksSrc="27" type="Task" decompositionType="Xor" refs="16">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20191109-212750270"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+      <metadata name="_autoSelected" value="20191110-120218565"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Food Court" fromLinks="//@urnLinks.0" id="17" linksDest="112 121" linksSrc="30" type="Task" decompositionType="Or" refs="18">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Miscellaneous" fromLinks="//@urnLinks.13" id="19" linksDest="2822 2823" linksSrc="31" type="Task" decompositionType="Or" refs="20">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Shopping" fromLinks="//@urnLinks.18" id="21" linksDest="106 107" linksSrc="32" type="Task" decompositionType="Or" refs="22">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Metro" fromLinks="//@urnLinks.10" id="34" linksSrc="120" type="Task" refs="35"/>
-    <intElements xsi:type="fm:Feature" name="other mall" fromLinks="//@urnLinks.11" id="36" linksSrc="118" type="Task" refs="37"/>
-    <intElements xsi:type="fm:Feature" name="street" fromLinks="//@urnLinks.12" id="38" linksSrc="117" type="Task" refs="39"/>
-    <intElements xsi:type="fm:Feature" name="eating" fromLinks="//@urnLinks.1" id="42" linksDest="114 115" linksSrc="112" type="Task" decompositionType="Or" refs="43"/>
-    <intElements xsi:type="fm:Feature" name="chilling" fromLinks="//@urnLinks.2" id="44" linksSrc="121" type="Task" refs="45"/>
-    <intElements xsi:type="fm:Feature" name="ordering" fromLinks="//@urnLinks.3" id="46" linksDest="140 142" linksSrc="114" type="Task" refs="47"/>
-    <intElements xsi:type="fm:Feature" name="bring own" fromLinks="//@urnLinks.4" id="48" linksSrc="115" type="Task" refs="49"/>
+    <intElements xsi:type="fm:Feature" name="Metro" fromLinks="//@urnLinks.10" id="34" linksSrc="120" type="Task" refs="35">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="other mall" fromLinks="//@urnLinks.11" id="36" linksSrc="118" type="Task" refs="37">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="street" fromLinks="//@urnLinks.12" id="38" linksSrc="117" type="Task" importance="High" importanceQuantitative="100" refs="39" selectable="true">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="eating" fromLinks="//@urnLinks.1" id="42" linksDest="114 115" linksSrc="112" type="Task" decompositionType="Or" refs="43">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="chilling" fromLinks="//@urnLinks.2" id="44" linksSrc="121" type="Task" refs="45">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="ordering" fromLinks="//@urnLinks.3" id="46" linksDest="140 142" linksSrc="114" type="Task" refs="47">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="bring own" fromLinks="//@urnLinks.4" id="48" linksSrc="115" type="Task" refs="49">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Wifi" fromLinks="//@urnLinks.14" id="60" linksDest="110 111" linksSrc="2822" type="Task" decompositionType="Xor" refs="61">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Receving Notifications" fromLinks="//@urnLinks.17" id="62" linksSrc="2823" type="Task" refs="63">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="normal connection" fromLinks="//@urnLinks.15" id="64" linksSrc="110" type="Task" refs="65"/>
-    <intElements xsi:type="fm:Feature" name="connecting through app" fromLinks="//@urnLinks.16" id="66" linksSrc="111" type="Task" refs="67"/>
-    <intElements xsi:type="fm:Feature" name="Window shopping" fromLinks="//@urnLinks.19" id="75" linksSrc="106" type="Task" refs="76"/>
-    <intElements xsi:type="fm:Feature" name="Browsing through" fromLinks="//@urnLinks.20" id="77" linksDest="122" linksSrc="107" type="Task" refs="78"/>
+    <intElements xsi:type="fm:Feature" name="normal connection" fromLinks="//@urnLinks.15" id="64" linksSrc="110" type="Task" refs="65">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="connecting through app" fromLinks="//@urnLinks.16" id="66" linksSrc="111" type="Task" refs="67">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Window shopping" fromLinks="//@urnLinks.19" id="75" linksSrc="106" type="Task" refs="76">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Browsing through" fromLinks="//@urnLinks.20" id="77" linksDest="122" linksSrc="107" type="Task" refs="78">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Purchasing" id="79" linksDest="132 2807" linksSrc="122" type="Task" refs="80">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="paying for food" fromLinks="//@urnLinks.5" id="83" linksDest="128 129" linksSrc="140" type="Task" decompositionType="Xor" refs="138">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20191109-212750270"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="receiving points" fromLinks="//@urnLinks.6" id="85" linksSrc="132 142" type="Task" refs="86 137">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="paying normally" fromLinks="//@urnLinks.7" id="87" linksSrc="128" type="Task" refs="139"/>
-    <intElements xsi:type="fm:Feature" name="paying with points" fromLinks="//@urnLinks.8" id="89" linksSrc="129" type="Task" refs="136"/>
+    <intElements xsi:type="fm:Feature" name="paying normally" fromLinks="//@urnLinks.7" id="87" linksSrc="128" type="Task" refs="139">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="paying with points" fromLinks="//@urnLinks.8" id="89" linksSrc="129" type="Task" refs="136">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Paying for articles" id="2798" linksDest="2816 2817" linksSrc="2807" type="Task" decompositionType="Xor" refs="2799">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+      <metadata name="_autoSelected" value="20191110-120218565"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Paying by Card/Cash" fromLinks="//@urnLinks.21" id="2809" linksSrc="2816" type="Task" refs="2810"/>
-    <intElements xsi:type="fm:Feature" name="Paying by Points" fromLinks="//@urnLinks.22" id="2811" linksSrc="2817" type="Task" refs="2812"/>
+    <intElements xsi:type="fm:Feature" name="Paying by Card/Cash" fromLinks="//@urnLinks.21" id="2809" linksSrc="2816" type="Task" refs="2810">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Paying by Points" fromLinks="//@urnLinks.22" id="2811" linksSrc="2817" type="Task" refs="2812">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory27" id="27" refs="//@urndef/@specDiagrams.1/@connections.0" dest="13" src="15" quantitativeContribution="100"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional30" id="30" refs="//@urndef/@specDiagrams.1/@connections.1" dest="13" src="17" quantitativeContribution="0"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional31" id="31" refs="//@urndef/@specDiagrams.1/@connections.2" dest="13" src="19" quantitativeContribution="0"/>
@@ -89,7 +157,7 @@
     <links xsi:type="grl:Decomposition" name="Decomposition2817" id="2817" refs="//@urndef/@specDiagrams.1/@connections.23" dest="2798" src="2811"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional2822" id="2822" refs="//@urndef/@specDiagrams.1/@connections.24" dest="19" src="60" quantitativeContribution="100"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional2823" id="2823" refs="//@urndef/@specDiagrams.1/@connections.25" dest="19" src="62" quantitativeContribution="100"/>
-    <groups name="StrategiesGroup5" id="5" strategies="6 2825"/>
+    <groups name="StrategiesGroup5" id="5" strategies="6 2825 2827"/>
     <strategies name="TrendyTeenager_KamyMoussavikafi" id="6" author="yuxinzhou" group="5">
       <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
         <kpiEvalValueSet/>
@@ -130,6 +198,32 @@
         <kpiEvalValueSet/>
       </evaluations>
       <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="87">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Dad_JeffreyLeung" id="2827" author="Jeff" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="19">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="21">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="77">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="79">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="2809">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="60">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="64">
         <kpiEvalValueSet/>
       </evaluations>
     </strategies>
