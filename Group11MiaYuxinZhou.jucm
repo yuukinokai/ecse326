@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 10, 2019 8:56:18 PM EST" modified="November 10, 2019 11:20:12 PM EST" specVersion="47" urnVersion="1.27" nextGlobalID="3307">
+  <ucmspec>
+    <scenarioGroups name="Worker Scenario" id="7">
+      <scenarios name="pay lunch with points" id="2952">
+        <initializations value="true" variable="284"/>
+        <initializations value="false" variable="745"/>
+        <initializations value="true" variable="778"/>
+        <initializations value="true" variable="348"/>
+        <initializations value="false" variable="1060"/>
+        <initializations value="true" variable="430"/>
+        <initializations value="true" variable="695"/>
+        <initializations value="true" variable="180"/>
+        <initializations value="false" variable="994"/>
+        <startPoints enabled="true" startPoint="144"/>
+        <endPoints enabled="true" mandatory="true" endPoint="146"/>
+      </scenarios>
+      <scenarios name="shopping" id="2953">
+        <preconditions label="" expression="true"/>
+        <initializations value="true" variable="778"/>
+        <initializations value="true" variable="695"/>
+        <initializations value="true" variable="430"/>
+        <initializations value="false" variable="348"/>
+        <initializations value="false" variable="2974"/>
+        <initializations value="false" variable="2973"/>
+        <initializations value="false" variable="3089"/>
+        <initializations value="false" variable="3144"/>
+        <initializations value="false" variable="3199"/>
+        <startPoints enabled="true" startPoint="1232"/>
+        <endPoints enabled="true" mandatory="true" endPoint="1234"/>
+      </scenarios>
+    </scenarioGroups>
+    <variables name="IsEating" id="180"/>
+    <variables name="BuyFood" id="284"/>
+    <variables name="HasLoyaltyProgram" id="348"/>
+    <variables name="WantsLoyaltyPoints" id="430"/>
+    <variables name="WantsPayPoints" id="695"/>
+    <variables name="CreditDebit" id="745"/>
+    <variables name="HasEnoughPoints" id="778"/>
+    <variables name="GuestConnectionSuccessful" id="994"/>
+    <variables name="PrivateConnectionSuccessful" id="1060"/>
+    <variables name="hasItemsToBuy" id="2973"/>
+    <variables name="wantToEnterShop_" id="2974"/>
+    <variables name="tryProduct" id="3089"/>
+    <variables name="windowShopping" id="3144"/>
+    <variables name="enterShop" id="3199"/>
+  </ucmspec>
+  <grlspec>
+    <intElements xsi:type="fm:Feature" name="Montreal Eaton Center" id="13" linksDest="27 30 31 32" type="Task" refs="14"/>
+    <intElements xsi:type="fm:Feature" name="Entering/Exiting" fromLinks="//@urnLinks.9" id="15" linksDest="120 117 118" linksSrc="27" type="Task" decompositionType="Xor" refs="16">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_autoSelected" value="20191110-125010562"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Food Court" fromLinks="//@urnLinks.0" id="17" linksDest="112 121" linksSrc="30 2866" type="Task" decompositionType="Or" refs="18 2863">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Miscellaneous" fromLinks="//@urnLinks.13" id="19" linksDest="2822 2823" linksSrc="31" type="Task" decompositionType="Or" refs="20">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Shopping" fromLinks="//@urnLinks.18" id="21" linksDest="106 107" linksSrc="32" type="Task" decompositionType="Or" refs="22">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Metro" fromLinks="//@urnLinks.10" id="34" linksSrc="120 2859" type="Task" importance="High" importanceQuantitative="100" refs="35 2851"/>
+    <intElements xsi:type="fm:Feature" name="other mall" fromLinks="//@urnLinks.11" id="36" linksSrc="118 2860 2916" type="Task" importance="High" importanceQuantitative="75" refs="37 2855"/>
+    <intElements xsi:type="fm:Feature" name="street" fromLinks="//@urnLinks.12" id="38" linksSrc="117 2858 2918" type="Task" importance="Low" importanceQuantitative="25" refs="39 2853" selectable="true"/>
+    <intElements xsi:type="fm:Feature" name="eating" fromLinks="//@urnLinks.1" id="42" linksDest="114 115" linksSrc="112" type="Task" decompositionType="Or" refs="43"/>
+    <intElements xsi:type="fm:Feature" name="chilling" fromLinks="//@urnLinks.2" id="44" linksSrc="121" type="Task" refs="45"/>
+    <intElements xsi:type="fm:Feature" name="ordering" fromLinks="//@urnLinks.3" id="46" linksDest="140 142" linksSrc="114" type="Task" refs="47"/>
+    <intElements xsi:type="fm:Feature" name="bring own" fromLinks="//@urnLinks.4" id="48" linksSrc="115 2896" type="Task" refs="49 2893"/>
+    <intElements xsi:type="fm:Feature" name="Wifi" fromLinks="//@urnLinks.14" id="60" linksDest="110 111" linksSrc="2822 2946" type="Task" decompositionType="Xor" refs="61 2941">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Receving Notifications" fromLinks="//@urnLinks.17" id="62" linksSrc="2823 2947" type="Task" refs="63 2943">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="normal connection" fromLinks="//@urnLinks.15" id="64" linksSrc="110" type="Task" refs="65"/>
+    <intElements xsi:type="fm:Feature" name="connecting through app" fromLinks="//@urnLinks.16" id="66" linksSrc="111" type="Task" refs="67"/>
+    <intElements xsi:type="fm:Feature" name="Window shopping" fromLinks="//@urnLinks.19" id="75" linksSrc="106 2908 2909" type="Task" refs="76 2905"/>
+    <intElements xsi:type="fm:Feature" name="Browsing through" fromLinks="//@urnLinks.20" id="77" linksDest="122" linksSrc="107" type="Task" refs="78"/>
+    <intElements xsi:type="fm:Feature" name="Purchasing" id="79" linksDest="132 2807" linksSrc="122 2925" type="Task" refs="80 2922">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="paying for food" fromLinks="//@urnLinks.5" id="83" linksDest="128 129" linksSrc="140" type="Task" decompositionType="Xor" refs="138">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="receiving points" fromLinks="//@urnLinks.6" id="85" linksSrc="132 142 2915 2950" type="Task" refs="86 137 2869">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="paying normally" fromLinks="//@urnLinks.7" id="87" linksSrc="128" type="Task" refs="139"/>
+    <intElements xsi:type="fm:Feature" name="paying with points" fromLinks="//@urnLinks.8" id="89" linksSrc="129 2911 2949" type="Task" refs="136 2887"/>
+    <intElements xsi:type="fm:Feature" name="Paying for articles" id="2798" linksDest="2816 2817" linksSrc="2807" type="Task" decompositionType="Xor" refs="2799">
+      <metadata name="_addAggregate" value="disable"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Paying by Card/Cash" fromLinks="//@urnLinks.21" id="2809" linksSrc="2816" type="Task" refs="2810"/>
+    <intElements xsi:type="fm:Feature" name="Paying by Points" fromLinks="//@urnLinks.22" id="2811" linksSrc="2817" type="Task" refs="2812"/>
+    <intElements name="Easy access to work" id="2836" linksDest="2858 2859 2860" importance="Medium" importanceQuantitative="50" refs="2837"/>
+    <intElements name="Easy access to food" id="2838" linksDest="2866 2916 2918" importance="Medium" importanceQuantitative="50" refs="2839"/>
+    <intElements name="Minimize lineup time to buy food" id="2844" linksSrc="2902" type="Goal" importance="Medium" importanceQuantitative="50" refs="2845"/>
+    <intElements name="Minimize amount of money spend on food" id="2846" linksDest="2896 2932" linksSrc="2884" type="Goal" importance="High" importanceQuantitative="75" refs="2847"/>
+    <intElements name="Task2850" id="2850" type="Task"/>
+    <intElements name="Task2852" id="2852" type="Task"/>
+    <intElements name="Task2854" id="2854" type="Task"/>
+    <intElements name="Task2862" id="2862" type="Task"/>
+    <intElements name="Task2868" id="2868" type="Task"/>
+    <intElements name="Save money" id="2880" linksDest="2884 2909 2911 2915 2925" importance="High" importanceQuantitative="100" refs="2881"/>
+    <intElements name="Task2886" id="2886" type="Task"/>
+    <intElements name="Task2892" id="2892" type="Task"/>
+    <intElements name="Maximizing lunch break hour" id="2898" linksDest="2902 2908" type="Goal" importance="Medium" importanceQuantitative="50" refs="2899"/>
+    <intElements name="Task2904" id="2904" type="Task"/>
+    <intElements name="Task2921" id="2921" type="Task"/>
+    <intElements name="Ordering food" id="2927" linksSrc="2932" type="Task" refs="2928"/>
+    <intElements name="Achieve sales goal" id="2934" linksDest="2946 2947 2949 2950" type="Goal" importance="High" importanceQuantitative="100" refs="2935"/>
+    <intElements name="Task2940" id="2940" type="Task"/>
+    <intElements name="Task2942" id="2942" type="Task"/>
+    <actors name="Employee" id="2830" contRefs="2831" importance="Medium" importanceQuantitative="50"/>
+    <links xsi:type="fm:MandatoryFMLink" name="Mandatory27" id="27" refs="//@urndef/@specDiagrams.1/@connections.0" dest="13" src="15" quantitativeContribution="100"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional30" id="30" refs="//@urndef/@specDiagrams.1/@connections.1" dest="13" src="17" quantitativeContribution="0"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional31" id="31" refs="//@urndef/@specDiagrams.1/@connections.2" dest="13" src="19" quantitativeContribution="0"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional32" id="32" refs="//@urndef/@specDiagrams.1/@connections.3" dest="13" src="21" quantitativeContribution="0"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition106" id="106" refs="//@urndef/@specDiagrams.1/@connections.4" dest="21" src="75"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition107" id="107" refs="//@urndef/@specDiagrams.1/@connections.5" dest="21" src="77"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition110" id="110" refs="//@urndef/@specDiagrams.1/@connections.6" dest="60" src="64"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition111" id="111" refs="//@urndef/@specDiagrams.1/@connections.7" dest="60" src="66"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition112" id="112" refs="//@urndef/@specDiagrams.1/@connections.8" dest="17" src="42"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition114" id="114" refs="//@urndef/@specDiagrams.1/@connections.9" dest="42" src="46"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition115" id="115" refs="//@urndef/@specDiagrams.1/@connections.10" dest="42" src="48"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition117" id="117" refs="//@urndef/@specDiagrams.1/@connections.11" dest="15" src="38"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition118" id="118" refs="//@urndef/@specDiagrams.1/@connections.12" dest="15" src="36"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition120" id="120" refs="//@urndef/@specDiagrams.1/@connections.13" dest="15" src="34"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition121" id="121" refs="//@urndef/@specDiagrams.1/@connections.14" dest="17" src="44"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional122" id="122" refs="//@urndef/@specDiagrams.1/@connections.15" dest="77" src="79" quantitativeContribution="100"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition128" id="128" refs="//@urndef/@specDiagrams.1/@connections.18" dest="83" src="87"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition129" id="129" refs="//@urndef/@specDiagrams.1/@connections.17" dest="83" src="89"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional132" id="132" refs="//@urndef/@specDiagrams.1/@connections.16" dest="79" src="85" quantitativeContribution="0"/>
+    <links xsi:type="fm:MandatoryFMLink" name="Mandatory140" id="140" refs="//@urndef/@specDiagrams.1/@connections.19" dest="46" src="83" quantitativeContribution="100"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional142" id="142" refs="//@urndef/@specDiagrams.1/@connections.20" dest="46" src="85" quantitativeContribution="0"/>
+    <links xsi:type="fm:MandatoryFMLink" name="Mandatory2807" id="2807" refs="//@urndef/@specDiagrams.1/@connections.21" dest="79" src="2798" quantitativeContribution="100"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition2816" id="2816" refs="//@urndef/@specDiagrams.1/@connections.22" dest="2798" src="2809"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition2817" id="2817" refs="//@urndef/@specDiagrams.1/@connections.23" dest="2798" src="2811"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional2822" id="2822" refs="//@urndef/@specDiagrams.1/@connections.24" dest="19" src="60" quantitativeContribution="100"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional2823" id="2823" refs="//@urndef/@specDiagrams.1/@connections.25" dest="19" src="62" quantitativeContribution="100"/>
+    <links xsi:type="grl:Contribution" name="Contribution2858" id="2858" refs="//@urndef/@specDiagrams.0/@connections.0" dest="2836" src="38"/>
+    <links xsi:type="grl:Contribution" name="Contribution2859" id="2859" refs="//@urndef/@specDiagrams.0/@connections.1" dest="2836" src="34"/>
+    <links xsi:type="grl:Contribution" name="Contribution2860" id="2860" refs="//@urndef/@specDiagrams.0/@connections.2" dest="2836" src="36"/>
+    <links xsi:type="grl:Contribution" name="Contribution2866" id="2866" refs="//@urndef/@specDiagrams.0/@connections.3" dest="2838" src="17" contribution="SomePositive" quantitativeContribution="75"/>
+    <links xsi:type="grl:Contribution" name="Contribution2884" id="2884" refs="//@urndef/@specDiagrams.0/@connections.4" dest="2880" src="2846" contribution="Make" quantitativeContribution="100"/>
+    <links xsi:type="grl:Contribution" name="Contribution2896" id="2896" refs="//@urndef/@specDiagrams.0/@connections.5" dest="2846" src="48" contribution="Make" quantitativeContribution="100"/>
+    <links xsi:type="grl:Contribution" name="Contribution2902" id="2902" refs="//@urndef/@specDiagrams.0/@connections.6" dest="2898" src="2844"/>
+    <links xsi:type="grl:Contribution" name="Contribution2908" id="2908" refs="//@urndef/@specDiagrams.0/@connections.7" dest="2898" src="75" contribution="SomePositive" quantitativeContribution="50"/>
+    <links xsi:type="grl:Contribution" name="Contribution2909" id="2909" refs="//@urndef/@specDiagrams.0/@connections.8" dest="2880" src="75" contribution="SomePositive" quantitativeContribution="50"/>
+    <links xsi:type="grl:Contribution" name="Contribution2911" id="2911" refs="//@urndef/@specDiagrams.0/@connections.9" dest="2880" src="89"/>
+    <links xsi:type="grl:Contribution" name="Contribution2915" id="2915" refs="//@urndef/@specDiagrams.0/@connections.10" dest="2880" src="85"/>
+    <links xsi:type="grl:Contribution" name="Contribution2916" id="2916" refs="//@urndef/@specDiagrams.0/@connections.11" dest="2838" src="36"/>
+    <links xsi:type="grl:Contribution" name="Contribution2918" id="2918" refs="//@urndef/@specDiagrams.0/@connections.12" dest="2838" src="38"/>
+    <links xsi:type="grl:Contribution" name="Contribution2925" id="2925" refs="//@urndef/@specDiagrams.0/@connections.13" dest="2880" src="79" contribution="Break" quantitativeContribution="-100"/>
+    <links xsi:type="grl:Contribution" name="Contribution2932" id="2932" refs="//@urndef/@specDiagrams.0/@connections.14" dest="2846" src="2927" contribution="Break" quantitativeContribution="-100"/>
+    <links xsi:type="grl:Contribution" name="Contribution2946" id="2946" refs="//@urndef/@specDiagrams.0/@connections.15" dest="2934" src="60"/>
+    <links xsi:type="grl:Contribution" name="Contribution2947" id="2947" refs="//@urndef/@specDiagrams.0/@connections.16" dest="2934" src="62" contribution="SomePositive" quantitativeContribution="50"/>
+    <links xsi:type="grl:Contribution" name="Contribution2949" id="2949" refs="//@urndef/@specDiagrams.0/@connections.17" dest="2934" src="89" contribution="Make" quantitativeContribution="100"/>
+    <links xsi:type="grl:Contribution" name="Contribution2950" id="2950" refs="//@urndef/@specDiagrams.0/@connections.18" dest="2934" src="85" contribution="Make" quantitativeContribution="100"/>
+    <groups name="StrategiesGroup5" id="5" strategies="6 2825 2827 2829"/>
+    <strategies name="TrendyTeenager_KamyMoussavikafi" id="6" author="yuxinzhou" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="44">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="75">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="2809">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="66">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Student_SophieDeng" id="2825" author="Sophie" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="36">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="19">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="60">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="64">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="17">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="42">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="46">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="87">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Dad_JeffreyLeung" id="2827" author="Jeff" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="19">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="21">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="77">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="79">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="2809">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="60">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="64">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Worker_MiaYuxinZhou" id="2829" author="yuxinzhou" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="36">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="17">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="42">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="48">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="19">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="60">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="64">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="21">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="75">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <impactModel/>
+    <indicatorGroup name="Time" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="10" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="11" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="12" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <responsibilities name="Do something" id="192" respRefs="193"/>
+    <responsibilities name="Order Food" id="297" respRefs="298"/>
+    <responsibilities name="Receive Points" id="366" respRefs="367"/>
+    <responsibilities name="Make Loyalty Program Account" id="414" respRefs="415"/>
+    <responsibilities name="Use Cash" id="714" respRefs="715"/>
+    <responsibilities name="Use Card" id="723" respRefs="724"/>
+    <responsibilities name="Decrease Points" id="772" respRefs="773"/>
+    <responsibilities name="Eat" id="791" respRefs="792"/>
+    <responsibilities name="Enter by metro" id="819" respRefs="820"/>
+    <responsibilities name="enter/exit through a connected mall" id="838" respRefs="839"/>
+    <responsibilities name="Enter/Exit through Street" id="853" respRefs="854"/>
+    <responsibilities name="Connect to Guest Wifi" id="891" respRefs="892"/>
+    <responsibilities name="Open App" id="1040" respRefs="1041"/>
+    <responsibilities name="Enter login info through app" id="1046" respRefs="1047"/>
+    <responsibilities name="Receive Notification" id="1109" respRefs="1110"/>
+    <responsibilities name="Pick Method" id="1223" respRefs="1224"/>
+    <responsibilities name="Look at goods displayed in shop windows" id="1379" respRefs="1380"/>
+    <responsibilities name="Look at goods in the store" id="1395" respRefs="1396"/>
+    <responsibilities name="Try product" id="1560" respRefs="1561"/>
+    <responsibilities name="Pick good(s)" id="1588" respRefs="1589"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="Employee Goal Model" id="2">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2837" id="2837" x="179" y="61" contRef="2831" pred="//@urndef/@specDiagrams.0/@connections.0 //@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.2" def="2836">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2839" id="2839" x="170" y="144" contRef="2831" pred="//@urndef/@specDiagrams.0/@connections.3 //@urndef/@specDiagrams.0/@connections.11 //@urndef/@specDiagrams.0/@connections.12" def="2838">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2845" id="2845" x="226" y="332" contRef="2831" succ="//@urndef/@specDiagrams.0/@connections.6" def="2844">
+        <metadata name="_height" value="55"/>
+        <metadata name="_width" value="138"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2847" id="2847" x="353" y="297" contRef="2831" succ="//@urndef/@specDiagrams.0/@connections.4" pred="//@urndef/@specDiagrams.0/@connections.5 //@urndef/@specDiagrams.0/@connections.14" def="2846">
+        <metadata name="_width" value="144"/>
+        <metadata name="_height" value="51"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2851" id="2851" x="-120" y="140" succ="//@urndef/@specDiagrams.0/@connections.1" def="34">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2853" id="2853" x="-68" y="86" succ="//@urndef/@specDiagrams.0/@connections.0 //@urndef/@specDiagrams.0/@connections.12" def="38">
+        <metadata name="_width" value="87"/>
+        <metadata name="_height" value="43"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2855" id="2855" x="-118" y="204" succ="//@urndef/@specDiagrams.0/@connections.2 //@urndef/@specDiagrams.0/@connections.11" def="36">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2863" id="2863" x="-124" y="272" succ="//@urndef/@specDiagrams.0/@connections.3" def="17">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2869" id="2869" x="680" y="348" succ="//@urndef/@specDiagrams.0/@connections.10 //@urndef/@specDiagrams.0/@connections.18" def="85">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2881" id="2881" x="291" y="164" contRef="2831" pred="//@urndef/@specDiagrams.0/@connections.4 //@urndef/@specDiagrams.0/@connections.8 //@urndef/@specDiagrams.0/@connections.9 //@urndef/@specDiagrams.0/@connections.10 //@urndef/@specDiagrams.0/@connections.13" def="2880">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2887" id="2887" x="725" y="271" succ="//@urndef/@specDiagrams.0/@connections.9 //@urndef/@specDiagrams.0/@connections.17" def="89">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2893" id="2893" x="758" y="189" succ="//@urndef/@specDiagrams.0/@connections.5" def="48">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2899" id="2899" x="232" y="247" contRef="2831" pred="//@urndef/@specDiagrams.0/@connections.6 //@urndef/@specDiagrams.0/@connections.7" def="2898">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2905" id="2905" x="-80" y="335" succ="//@urndef/@specDiagrams.0/@connections.7 //@urndef/@specDiagrams.0/@connections.8" def="75">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2922" id="2922" x="603" y="22" contRef="2831" succ="//@urndef/@specDiagrams.0/@connections.13" def="79">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2928" id="2928" x="719" y="101" succ="//@urndef/@specDiagrams.0/@connections.14" def="2927">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2935" id="2935" x="302" y="70" contRef="2831" pred="//@urndef/@specDiagrams.0/@connections.15 //@urndef/@specDiagrams.0/@connections.16 //@urndef/@specDiagrams.0/@connections.17 //@urndef/@specDiagrams.0/@connections.18" def="2934">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2941" id="2941" x="459" y="-37" succ="//@urndef/@specDiagrams.0/@connections.15" def="60">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2943" id="2943" x="329" y="-48" succ="//@urndef/@specDiagrams.0/@connections.16" def="62">
+        <metadata name="_width" value="84"/>
+        <metadata name="_height" value="42"/>
+      </nodes>
+      <contRefs xsi:type="grl:ActorRef" name="ActorRef2831" id="2831" x="6" y="7" width="670" height="401" contDef="2830" nodes="2837 2839 2845 2847 2881 2899 2922 2935">
+        <label/>
+      </contRefs>
+      <connections xsi:type="grl:LinkRef" source="2853" target="2837" link="2858">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2851" target="2837" link="2859">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2855" target="2837" link="2860">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2863" target="2839" link="2866">
+        <label deltaX="18" deltaY="-129"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2847" target="2881" link="2884">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2893" target="2847" link="2896">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2845" target="2899" link="2902">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2905" target="2899" link="2908">
+        <label deltaX="-34" deltaY="-47"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2905" target="2881" link="2909">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2887" target="2881" link="2911">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2869" target="2881" link="2915">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2855" target="2839" link="2916">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2853" target="2839" link="2918">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2922" target="2881" link="2925">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2928" target="2847" link="2932">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2941" target="2935" link="2946">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2943" target="2935" link="2947">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2887" target="2935" link="2949">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2869" target="2935" link="2950">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram" id="4">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef14" id="14" x="376" y="24" pred="//@urndef/@specDiagrams.1/@connections.0 //@urndef/@specDiagrams.1/@connections.1 //@urndef/@specDiagrams.1/@connections.2 //@urndef/@specDiagrams.1/@connections.3" def="13">
+        <metadata name="_height" value="66"/>
+        <metadata name="_width" value="126"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef16" id="16" x="-152" y="136" succ="//@urndef/@specDiagrams.1/@connections.0" pred="//@urndef/@specDiagrams.1/@connections.11 //@urndef/@specDiagrams.1/@connections.12 //@urndef/@specDiagrams.1/@connections.13" def="15">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef18" id="18" x="176" y="136" succ="//@urndef/@specDiagrams.1/@connections.1" pred="//@urndef/@specDiagrams.1/@connections.8 //@urndef/@specDiagrams.1/@connections.14" def="17">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef20" id="20" x="474" y="136" succ="//@urndef/@specDiagrams.1/@connections.2" pred="//@urndef/@specDiagrams.1/@connections.24 //@urndef/@specDiagrams.1/@connections.25" def="19">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef22" id="22" x="789" y="138" succ="//@urndef/@specDiagrams.1/@connections.3" pred="//@urndef/@specDiagrams.1/@connections.4 //@urndef/@specDiagrams.1/@connections.5" def="21">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef35" id="35" x="-285" y="247" succ="//@urndef/@specDiagrams.1/@connections.13" def="34">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef37" id="37" x="-152" y="248" succ="//@urndef/@specDiagrams.1/@connections.12" def="36">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef39" id="39" x="-22" y="250" succ="//@urndef/@specDiagrams.1/@connections.11" def="38">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef43" id="43" x="121" y="249" succ="//@urndef/@specDiagrams.1/@connections.8" pred="//@urndef/@specDiagrams.1/@connections.9 //@urndef/@specDiagrams.1/@connections.10" def="42">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef45" id="45" x="262" y="249" succ="//@urndef/@specDiagrams.1/@connections.14" def="44">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef47" id="47" x="51" y="334" succ="//@urndef/@specDiagrams.1/@connections.9" pred="//@urndef/@specDiagrams.1/@connections.19 //@urndef/@specDiagrams.1/@connections.20" def="46">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef49" id="49" x="171" y="335" succ="//@urndef/@specDiagrams.1/@connections.10" def="48">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef61" id="61" x="394" y="249" succ="//@urndef/@specDiagrams.1/@connections.24" pred="//@urndef/@specDiagrams.1/@connections.6 //@urndef/@specDiagrams.1/@connections.7" def="60">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef63" id="63" x="568" y="247" succ="//@urndef/@specDiagrams.1/@connections.25" def="62">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef65" id="65" x="326" y="332" succ="//@urndef/@specDiagrams.1/@connections.6" def="64">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef67" id="67" x="467" y="334" succ="//@urndef/@specDiagrams.1/@connections.7" def="66">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef76" id="76" x="704" y="249" succ="//@urndef/@specDiagrams.1/@connections.4" def="75">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef78" id="78" x="878" y="249" succ="//@urndef/@specDiagrams.1/@connections.5" pred="//@urndef/@specDiagrams.1/@connections.15" def="77">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef80" id="80" x="843" y="332" succ="//@urndef/@specDiagrams.1/@connections.15" pred="//@urndef/@specDiagrams.1/@connections.16 //@urndef/@specDiagrams.1/@connections.21" def="79">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef86" id="86" x="957" y="405" succ="//@urndef/@specDiagrams.1/@connections.16" def="85">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef136" id="136" x="33" y="517" succ="//@urndef/@specDiagrams.1/@connections.17" def="89">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef137" id="137" x="180" y="412" succ="//@urndef/@specDiagrams.1/@connections.20" def="85">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef138" id="138" x="-55" y="411" succ="//@urndef/@specDiagrams.1/@connections.19" pred="//@urndef/@specDiagrams.1/@connections.17 //@urndef/@specDiagrams.1/@connections.18" def="83">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef139" id="139" x="-170" y="515" succ="//@urndef/@specDiagrams.1/@connections.18" def="87">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2799" id="2799" x="719" y="405" succ="//@urndef/@specDiagrams.1/@connections.21" pred="//@urndef/@specDiagrams.1/@connections.22 //@urndef/@specDiagrams.1/@connections.23" def="2798">
+        <metadata name="_width" value="102"/>
+        <metadata name="_height" value="51"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2810" id="2810" x="623" y="496" succ="//@urndef/@specDiagrams.1/@connections.22" def="2809">
+        <metadata name="_width" value="104"/>
+        <metadata name="_height" value="57"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef2812" id="2812" x="772" y="497" succ="//@urndef/@specDiagrams.1/@connections.23" def="2811">
+        <metadata name="_height" value="53"/>
+        <metadata name="_width" value="108"/>
+      </nodes>
+      <connections xsi:type="grl:LinkRef" source="16" target="14" link="27">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="18" target="14" link="30">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="20" target="14" link="31">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="22" target="14" link="32">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="76" target="22" link="106"/>
+      <connections xsi:type="grl:LinkRef" source="78" target="22" link="107"/>
+      <connections xsi:type="grl:LinkRef" source="65" target="61" link="110"/>
+      <connections xsi:type="grl:LinkRef" source="67" target="61" link="111"/>
+      <connections xsi:type="grl:LinkRef" source="43" target="18" link="112"/>
+      <connections xsi:type="grl:LinkRef" source="47" target="43" link="114"/>
+      <connections xsi:type="grl:LinkRef" source="49" target="43" link="115"/>
+      <connections xsi:type="grl:LinkRef" source="39" target="16" link="117"/>
+      <connections xsi:type="grl:LinkRef" source="37" target="16" link="118"/>
+      <connections xsi:type="grl:LinkRef" source="35" target="16" link="120"/>
+      <connections xsi:type="grl:LinkRef" source="45" target="18" link="121"/>
+      <connections xsi:type="grl:LinkRef" source="80" target="78" link="122">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="86" target="80" link="132">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="136" target="138" link="129"/>
+      <connections xsi:type="grl:LinkRef" source="139" target="138" link="128"/>
+      <connections xsi:type="grl:LinkRef" source="138" target="47" link="140">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="137" target="47" link="142">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2799" target="80" link="2807">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="2810" target="2799" link="2816"/>
+      <connections xsi:type="grl:LinkRef" source="2812" target="2799" link="2817"/>
+      <connections xsi:type="grl:LinkRef" source="61" target="20" link="2822">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="63" target="20" link="2823">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit by Metro" toLinks="//@urnLinks.10" id="795" parentStub="//@urndef/@specDiagrams.23/@nodes.5/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="ready to enter/exit centre" id="798" x="114" y="237" succ="//@urndef/@specDiagrams.2/@connections.0" inBindings="//@urndef/@specDiagrams.23/@nodes.5/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="entered/exit centre" id="800" x="314" y="237" pred="//@urndef/@specDiagrams.2/@connections.1" outBindings="//@urndef/@specDiagrams.23/@nodes.5/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef820" id="820" x="210" y="237" succ="//@urndef/@specDiagrams.2/@connections.1" pred="//@urndef/@specDiagrams.2/@connections.0" respDef="819">
+        <label deltaX="2" deltaY="30"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="798" target="820"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="820" target="800"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit by Street" toLinks="//@urnLinks.12" id="797" parentStub="//@urndef/@specDiagrams.23/@nodes.3/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="ready to enter/exit centre" id="844" x="195" y="222" succ="//@urndef/@specDiagrams.3/@connections.0" inBindings="//@urndef/@specDiagrams.23/@nodes.3/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="entered/exited centre" id="846" x="395" y="222" pred="//@urndef/@specDiagrams.3/@connections.1" outBindings="//@urndef/@specDiagrams.23/@nodes.3/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef854" id="854" x="295" y="222" succ="//@urndef/@specDiagrams.3/@connections.1" pred="//@urndef/@specDiagrams.3/@connections.0" respDef="853">
+        <label deltaX="3" deltaY="31"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="844" target="854"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="854" target="846"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="FoodCourt" toLinks="//@urnLinks.0" id="3" parentStub="//@urndef/@specDiagrams.22/@nodes.8/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Enter Food Court" id="144" x="146" y="198" succ="//@urndef/@specDiagrams.4/@connections.0" inBindings="//@urndef/@specDiagrams.22/@nodes.8/@bindings.0/@in.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Exit Food Court" id="146" x="714" y="200" pred="//@urndef/@specDiagrams.4/@connections.4" outBindings="//@urndef/@specDiagrams.22/@nodes.8/@bindings.0/@out.0" scenarioEndPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@endPoints.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Eating" id="149" x="357" y="200" succ="//@urndef/@specDiagrams.4/@connections.1" pred="//@urndef/@specDiagrams.4/@connections.5">
+        <label/>
+        <bindings plugin="198">
+          <in startPoint="199" stubEntry="//@urndef/@specDiagrams.4/@connections.5"/>
+          <out endPoint="201" stubExit="//@urndef/@specDiagrams.4/@connections.1"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Chilling" id="160" x="405" y="286" succ="//@urndef/@specDiagrams.4/@connections.3" pred="//@urndef/@specDiagrams.4/@connections.2">
+        <label/>
+        <bindings plugin="183">
+          <in startPoint="184" stubEntry="//@urndef/@specDiagrams.4/@connections.2"/>
+          <out endPoint="186" stubExit="//@urndef/@specDiagrams.4/@connections.3"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin167" id="167" x="597" y="199" succ="//@urndef/@specDiagrams.4/@connections.4" pred="//@urndef/@specDiagrams.4/@connections.1 //@urndef/@specDiagrams.4/@connections.3"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork177" id="177" x="200" y="198" succ="//@urndef/@specDiagrams.4/@connections.5 //@urndef/@specDiagrams.4/@connections.2" pred="//@urndef/@specDiagrams.4/@connections.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="144" target="177"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="149" target="167" outBindings="//@urndef/@specDiagrams.4/@nodes.2/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="177" target="160" inBindings="//@urndef/@specDiagrams.4/@nodes.3/@bindings.0/@in.0">
+        <condition label="IsEating=false" expression="IsEating=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="160" target="167" outBindings="//@urndef/@specDiagrams.4/@nodes.3/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="167" target="146"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="177" target="149" inBindings="//@urndef/@specDiagrams.4/@nodes.2/@bindings.0/@in.0">
+        <condition label="IsEating=true" expression="IsEating=true" description=""/>
+      </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Eating" toLinks="//@urnLinks.1" id="198" parentStub="//@urndef/@specDiagrams.4/@nodes.2/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Decide to eat" id="199" x="107" y="177" succ="//@urndef/@specDiagrams.5/@connections.0" inBindings="//@urndef/@specDiagrams.4/@nodes.2/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Done Eating" id="201" x="710" y="180" pred="//@urndef/@specDiagrams.5/@connections.4" outBindings="//@urndef/@specDiagrams.4/@nodes.2/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Buy Food" id="229" x="415" y="275" succ="//@urndef/@specDiagrams.5/@connections.2" pred="//@urndef/@specDiagrams.5/@connections.1">
+        <label/>
+        <bindings plugin="287">
+          <in startPoint="288" stubEntry="//@urndef/@specDiagrams.5/@connections.1"/>
+          <out endPoint="290" stubExit="//@urndef/@specDiagrams.5/@connections.2"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork259" id="259" x="279" y="179" succ="//@urndef/@specDiagrams.5/@connections.3 //@urndef/@specDiagrams.5/@connections.1" pred="//@urndef/@specDiagrams.5/@connections.0"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin277" id="277" x="519" y="181" succ="//@urndef/@specDiagrams.5/@connections.4" pred="//@urndef/@specDiagrams.5/@connections.5 //@urndef/@specDiagrams.5/@connections.2"/>
+      <nodes xsi:type="ucm.map:Stub" name="Eat Own Food" id="280" x="398" y="181" succ="//@urndef/@specDiagrams.5/@connections.5" pred="//@urndef/@specDiagrams.5/@connections.3">
+        <label/>
+        <bindings plugin="781">
+          <in startPoint="782" stubEntry="//@urndef/@specDiagrams.5/@connections.3"/>
+          <out endPoint="784" stubExit="//@urndef/@specDiagrams.5/@connections.5"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="199" target="259"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="259" target="229" inBindings="//@urndef/@specDiagrams.5/@nodes.2/@bindings.0/@in.0">
+        <condition label="BuyFood=true" expression="BuyFood=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="229" target="277" outBindings="//@urndef/@specDiagrams.5/@nodes.2/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="259" target="280" inBindings="//@urndef/@specDiagrams.5/@nodes.5/@bindings.0/@in.0">
+        <condition label="BuyFood=false" expression="BuyFood=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="277" target="201"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="280" target="277" outBindings="//@urndef/@specDiagrams.5/@nodes.5/@bindings.0/@out.0"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Eat" toLinks="//@urnLinks.4" id="781" parentStub="//@urndef/@specDiagrams.5/@nodes.5/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Has Food" id="782" x="281" y="137" succ="//@urndef/@specDiagrams.6/@connections.0" inBindings="//@urndef/@specDiagrams.5/@nodes.5/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Done" id="784" x="481" y="137" pred="//@urndef/@specDiagrams.6/@connections.1" outBindings="//@urndef/@specDiagrams.5/@nodes.5/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef792" id="792" x="381" y="137" succ="//@urndef/@specDiagrams.6/@connections.1" pred="//@urndef/@specDiagrams.6/@connections.0" respDef="791">
+        <label/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="782" target="792"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="792" target="784"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="BuyFood" toLinks="//@urnLinks.3" id="287" parentStub="//@urndef/@specDiagrams.5/@nodes.2/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Lining Up" id="288" x="190" y="159" succ="//@urndef/@specDiagrams.7/@connections.0" inBindings="//@urndef/@specDiagrams.5/@nodes.2/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Obtained Food" id="290" x="878" y="165" pred="//@urndef/@specDiagrams.7/@connections.6" outBindings="//@urndef/@specDiagrams.5/@nodes.2/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef298" id="298" x="290" y="159" succ="//@urndef/@specDiagrams.7/@connections.1" pred="//@urndef/@specDiagrams.7/@connections.0" respDef="297">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Pay" id="301" x="515" y="163" succ="//@urndef/@specDiagrams.7/@connections.2" pred="//@urndef/@specDiagrams.7/@connections.1">
+        <label/>
+        <bindings plugin="433">
+          <in startPoint="434" stubEntry="//@urndef/@specDiagrams.7/@connections.1"/>
+          <out endPoint="436" stubExit="//@urndef/@specDiagrams.7/@connections.2"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="ReceivePoints" id="308" x="710" y="248" succ="//@urndef/@specDiagrams.7/@connections.4" pred="//@urndef/@specDiagrams.7/@connections.3">
+        <label/>
+        <bindings plugin="353">
+          <in startPoint="354" stubEntry="//@urndef/@specDiagrams.7/@connections.3"/>
+          <out endPoint="356" stubExit="//@urndef/@specDiagrams.7/@connections.4"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork329" id="329" x="599" y="163" succ="//@urndef/@specDiagrams.7/@connections.5 //@urndef/@specDiagrams.7/@connections.3" pred="//@urndef/@specDiagrams.7/@connections.2"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin345" id="345" x="703" y="164" succ="//@urndef/@specDiagrams.7/@connections.6" pred="//@urndef/@specDiagrams.7/@connections.5 //@urndef/@specDiagrams.7/@connections.4"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="288" target="298"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="298" target="301" inBindings="//@urndef/@specDiagrams.7/@nodes.3/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="301" target="329" outBindings="//@urndef/@specDiagrams.7/@nodes.3/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="329" target="308" inBindings="//@urndef/@specDiagrams.7/@nodes.4/@bindings.0/@in.0">
+        <condition label="WantsLoyaltyPoints=true" expression="WantsLoyaltyPoints=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="308" target="345" outBindings="//@urndef/@specDiagrams.7/@nodes.4/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="329" target="345">
+        <condition label="WantsLoyaltyPoints=false" expression="WantsLoyaltyPoints=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="345" target="290"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Chilling" toLinks="//@urnLinks.2" id="183" parentStub="//@urndef/@specDiagrams.4/@nodes.3/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Chill" id="184" x="173" y="188" succ="//@urndef/@specDiagrams.8/@connections.0" inBindings="//@urndef/@specDiagrams.4/@nodes.3/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Done" id="186" x="373" y="188" pred="//@urndef/@specDiagrams.8/@connections.1" outBindings="//@urndef/@specDiagrams.4/@nodes.3/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef193" id="193" x="273" y="188" succ="//@urndef/@specDiagrams.8/@connections.1" pred="//@urndef/@specDiagrams.8/@connections.0" respDef="192">
+        <label/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="184" target="193"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="193" target="186"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="ReceivePoints" toLinks="//@urnLinks.6" id="353" parentStub="//@urndef/@specDiagrams.7/@nodes.4/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Get Points" id="354" x="178" y="153" succ="//@urndef/@specDiagrams.9/@connections.0" inBindings="//@urndef/@specDiagrams.7/@nodes.4/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Done" id="356" x="805" y="154" pred="//@urndef/@specDiagrams.9/@connections.1" outBindings="//@urndef/@specDiagrams.7/@nodes.4/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef367" id="367" x="677" y="156" succ="//@urndef/@specDiagrams.9/@connections.1" pred="//@urndef/@specDiagrams.9/@connections.4" respDef="366">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork403" id="403" x="278" y="153" succ="//@urndef/@specDiagrams.9/@connections.3 //@urndef/@specDiagrams.9/@connections.2" pred="//@urndef/@specDiagrams.9/@connections.0"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin413" id="413" x="476" y="154" succ="//@urndef/@specDiagrams.9/@connections.4" pred="//@urndef/@specDiagrams.9/@connections.3 //@urndef/@specDiagrams.9/@connections.5"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef415" id="415" x="430" y="305" succ="//@urndef/@specDiagrams.9/@connections.5" pred="//@urndef/@specDiagrams.9/@connections.2" respDef="414">
+        <label deltaY="-46"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="354" target="403"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="367" target="356"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="403" target="415">
+        <condition deltaX="136" deltaY="-18" label="HasLoyaltyProgram=false" expression="HasLoyaltyProgram=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="403" target="413">
+        <condition label="HasLoyaltyProgram=true" expression="HasLoyaltyProgram=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="413" target="367"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="415" target="413"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Pay" toLinks="//@urnLinks.5" id="433" parentStub="//@urndef/@specDiagrams.7/@nodes.3/@bindings.0 //@urndef/@specDiagrams.19/@nodes.6/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Has Amount To Pay" id="434" x="182" y="206" succ="//@urndef/@specDiagrams.10/@connections.0" inBindings="//@urndef/@specDiagrams.7/@nodes.3/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Paid" id="436" x="812" y="181" pred="//@urndef/@specDiagrams.10/@connections.4" outBindings="//@urndef/@specDiagrams.7/@nodes.3/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Pay Normally" id="459" x="650" y="245" succ="//@urndef/@specDiagrams.10/@connections.2" pred="//@urndef/@specDiagrams.10/@connections.7">
+        <label/>
+        <bindings plugin="705">
+          <in startPoint="706" stubEntry="//@urndef/@specDiagrams.10/@connections.7"/>
+          <out endPoint="708" stubExit="//@urndef/@specDiagrams.10/@connections.2"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Pay With Points" id="460" x="473" y="135" succ="//@urndef/@specDiagrams.10/@connections.3 //@urndef/@specDiagrams.10/@connections.1" pred="//@urndef/@specDiagrams.10/@connections.6">
+        <label/>
+        <bindings plugin="704">
+          <in startPoint="748" stubEntry="//@urndef/@specDiagrams.10/@connections.6"/>
+          <out endPoint="750" stubExit="//@urndef/@specDiagrams.10/@connections.3"/>
+          <out endPoint="756" stubExit="//@urndef/@specDiagrams.10/@connections.1"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin616" id="616" x="740" y="180" succ="//@urndef/@specDiagrams.10/@connections.4" pred="//@urndef/@specDiagrams.10/@connections.2 //@urndef/@specDiagrams.10/@connections.3"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork682" id="682" x="280" y="184" succ="//@urndef/@specDiagrams.10/@connections.6 //@urndef/@specDiagrams.10/@connections.5" pred="//@urndef/@specDiagrams.10/@connections.0"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin692" id="692" x="479" y="239" succ="//@urndef/@specDiagrams.10/@connections.7" pred="//@urndef/@specDiagrams.10/@connections.1 //@urndef/@specDiagrams.10/@connections.5"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="434" target="682"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="460" target="692" outBindings="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0/@out.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="459" target="616" outBindings="//@urndef/@specDiagrams.10/@nodes.2/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="460" target="616" outBindings="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="616" target="436"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="682" target="692">
+        <condition label="WantsPayPoints=false" expression="WantsPayPoints=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="682" target="460" inBindings="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0/@in.0">
+        <condition label="WantsPayPoints=true" expression="WantsPayPoints=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="692" target="459" inBindings="//@urndef/@specDiagrams.10/@nodes.2/@bindings.0/@in.0"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="PayPoints" toLinks="//@urnLinks.8 //@urnLinks.22" id="704" parentStub="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Amount to pay" id="748" x="214" y="158" succ="//@urndef/@specDiagrams.11/@connections.0" inBindings="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Paid" id="750" x="750" y="148" pred="//@urndef/@specDiagrams.11/@connections.3" outBindings="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Failed" id="756" x="485" y="325" pred="//@urndef/@specDiagrams.11/@connections.1" outBindings="//@urndef/@specDiagrams.10/@nodes.3/@bindings.0/@out.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork771" id="771" x="314" y="158" succ="//@urndef/@specDiagrams.11/@connections.2 //@urndef/@specDiagrams.11/@connections.1" pred="//@urndef/@specDiagrams.11/@connections.0"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef773" id="773" x="384" y="159" succ="//@urndef/@specDiagrams.11/@connections.3" pred="//@urndef/@specDiagrams.11/@connections.2" respDef="772">
+        <label/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="748" target="771"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="771" target="756">
+        <condition label="HasEnoughPoints=false" expression="HasEnoughPoints=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="771" target="773">
+        <condition label="HasEnoughPoints=true" expression="HasEnoughPoints=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="773" target="750"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="PayNormal" toLinks="//@urnLinks.7 //@urnLinks.21" id="705" parentStub="//@urndef/@specDiagrams.10/@nodes.2/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Amount to Pay" id="706" x="225" y="145" succ="//@urndef/@specDiagrams.12/@connections.0" inBindings="//@urndef/@specDiagrams.10/@nodes.2/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Paid" id="708" x="716" y="146" pred="//@urndef/@specDiagrams.12/@connections.5" outBindings="//@urndef/@specDiagrams.10/@nodes.2/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef715" id="715" x="461" y="144" succ="//@urndef/@specDiagrams.12/@connections.1" pred="//@urndef/@specDiagrams.12/@connections.4" respDef="714">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef724" id="724" x="479" y="295" succ="//@urndef/@specDiagrams.12/@connections.3" pred="//@urndef/@specDiagrams.12/@connections.2" respDef="723">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork734" id="734" x="364" y="144" succ="//@urndef/@specDiagrams.12/@connections.4 //@urndef/@specDiagrams.12/@connections.2" pred="//@urndef/@specDiagrams.12/@connections.0"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin742" id="742" x="560" y="145" succ="//@urndef/@specDiagrams.12/@connections.5" pred="//@urndef/@specDiagrams.12/@connections.1 //@urndef/@specDiagrams.12/@connections.3"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="706" target="734"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="715" target="742"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="734" target="724">
+        <condition deltaX="13" deltaY="-61" label="CreditDebit=true" expression="CreditDebit=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="724" target="742"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="734" target="715">
+        <condition deltaX="5" deltaY="-16" label="CreditDebit=false" expression="CreditDebit=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="742" target="708"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit by Other Mall" toLinks="//@urnLinks.11" id="796" parentStub="//@urndef/@specDiagrams.23/@nodes.6/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="ready to enter/exit centre" id="825" x="168" y="261" succ="//@urndef/@specDiagrams.13/@connections.0" inBindings="//@urndef/@specDiagrams.23/@nodes.6/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="entered/exited centre" id="827" x="368" y="261" pred="//@urndef/@specDiagrams.13/@connections.1" outBindings="//@urndef/@specDiagrams.23/@nodes.6/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef839" id="839" x="268" y="261" succ="//@urndef/@specDiagrams.13/@connections.1" pred="//@urndef/@specDiagrams.13/@connections.0" respDef="838">
+        <label deltaX="3" deltaY="35"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="825" target="839"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="839" target="827"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Miscellaneous" toLinks="//@urnLinks.13" id="865" parentStub="//@urndef/@specDiagrams.22/@nodes.11/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start Misc Action" id="866" x="195" y="215" succ="//@urndef/@specDiagrams.14/@connections.0" inBindings="//@urndef/@specDiagrams.22/@nodes.11/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint867" id="867" x="390" y="217" succ="//@urndef/@specDiagrams.14/@connections.1" pred="//@urndef/@specDiagrams.14/@connections.3"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Stop Misc action" id="868" x="747" y="218" pred="//@urndef/@specDiagrams.14/@connections.4" outBindings="//@urndef/@specDiagrams.22/@nodes.11/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1137" id="1137" x="303" y="216" succ="//@urndef/@specDiagrams.14/@connections.3 //@urndef/@specDiagrams.14/@connections.2" pred="//@urndef/@specDiagrams.14/@connections.0"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1181" id="1181" x="526" y="217" succ="//@urndef/@specDiagrams.14/@connections.4" pred="//@urndef/@specDiagrams.14/@connections.5 //@urndef/@specDiagrams.14/@connections.6"/>
+      <nodes xsi:type="ucm.map:Stub" name="Wifi Connect" id="1182" x="409" y="215" succ="//@urndef/@specDiagrams.14/@connections.5" pred="//@urndef/@specDiagrams.14/@connections.1">
+        <label/>
+        <bindings plugin="1065">
+          <in startPoint="1066" stubEntry="//@urndef/@specDiagrams.14/@connections.1"/>
+          <out endPoint="1068" stubExit="//@urndef/@specDiagrams.14/@connections.5"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Get Notification" id="1183" x="404" y="336" succ="//@urndef/@specDiagrams.14/@connections.6" pred="//@urndef/@specDiagrams.14/@connections.2">
+        <label deltaX="3" deltaY="-55"/>
+        <bindings plugin="1094">
+          <in startPoint="1095" stubEntry="//@urndef/@specDiagrams.14/@connections.2"/>
+          <out endPoint="1097" stubExit="//@urndef/@specDiagrams.14/@connections.6"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="866" target="1137"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="867" target="1182" inBindings="//@urndef/@specDiagrams.14/@nodes.5/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1137" target="1183" inBindings="//@urndef/@specDiagrams.14/@nodes.6/@bindings.0/@in.0">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1137" target="867">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1181" target="868"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1182" target="1181" outBindings="//@urndef/@specDiagrams.14/@nodes.5/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1183" target="1181" outBindings="//@urndef/@specDiagrams.14/@nodes.6/@bindings.0/@out.0"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Normal Connection" toLinks="//@urnLinks.15" id="882" parentStub="//@urndef/@specDiagrams.17/@nodes.2/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start normal wifi connection attempt" id="883" x="165" y="249" succ="//@urndef/@specDiagrams.15/@connections.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Connected to network" id="885" x="845" y="252" pred="//@urndef/@specDiagrams.15/@connections.4" outBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef892" id="892" x="414" y="251" succ="//@urndef/@specDiagrams.15/@connections.1" pred="//@urndef/@specDiagrams.15/@connections.0" respDef="891">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint899" id="899" x="473" y="400" succ="//@urndef/@specDiagrams.15/@connections.3" pred="//@urndef/@specDiagrams.15/@connections.2"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Not connected to network" id="900" x="844" y="421" pred="//@urndef/@specDiagrams.15/@connections.3" outBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.0/@out.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork985" id="985" x="442" y="252" succ="//@urndef/@specDiagrams.15/@connections.4 //@urndef/@specDiagrams.15/@connections.2" pred="//@urndef/@specDiagrams.15/@connections.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="883" target="892"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="892" target="985"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="985" target="899">
+        <condition label="" expression="GuestConnectionSuccessful=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="899" target="900"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="985" target="885">
+        <condition label="" expression="GuestConnectionSuccessful=true" description=""/>
+      </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Through App Connection" toLinks="//@urnLinks.16" id="999" parentStub="//@urndef/@specDiagrams.17/@nodes.2/@bindings.1">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start wifi connection attempt through app" id="1000" x="130" y="245" succ="//@urndef/@specDiagrams.16/@connections.0" inBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.1/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Connected to private network" id="1002" x="827" y="248" pred="//@urndef/@specDiagrams.16/@connections.2" outBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.1/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Not connected to private network" id="1011" x="784" y="377" pred="//@urndef/@specDiagrams.16/@connections.5" outBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.1/@out.1">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1031" id="1031" x="479" y="246" succ="//@urndef/@specDiagrams.16/@connections.2 //@urndef/@specDiagrams.16/@connections.1" pred="//@urndef/@specDiagrams.16/@connections.4"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1041" id="1041" x="281" y="248" succ="//@urndef/@specDiagrams.16/@connections.3" pred="//@urndef/@specDiagrams.16/@connections.0" respDef="1040">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1047" id="1047" x="393" y="248" succ="//@urndef/@specDiagrams.16/@connections.4" pred="//@urndef/@specDiagrams.16/@connections.3" respDef="1046">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint1010" id="1010" x="491" y="367" succ="//@urndef/@specDiagrams.16/@connections.5" pred="//@urndef/@specDiagrams.16/@connections.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1000" target="1041"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1031" target="1010">
+        <condition label="" expression="PrivateConnectionSuccessful=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1031" target="1002">
+        <condition label="" expression="PrivateConnectionSuccessful=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1041" target="1047"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1047" target="1031"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1010" target="1011"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Wifi" toLinks="//@urnLinks.14" id="1065" parentStub="//@urndef/@specDiagrams.14/@nodes.5/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start Wifi Connection Attempt" id="1066" x="210" y="258" succ="//@urndef/@specDiagrams.17/@connections.0" inBindings="//@urndef/@specDiagrams.14/@nodes.5/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Connected to wifi" id="1068" x="818" y="262" pred="//@urndef/@specDiagrams.17/@connections.2" outBindings="//@urndef/@specDiagrams.14/@nodes.5/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Connection Method" id="1092" x="482" y="258" succ="//@urndef/@specDiagrams.17/@connections.2 //@urndef/@specDiagrams.17/@connections.1" pred="//@urndef/@specDiagrams.17/@connections.4" dynamic="true">
+        <label/>
+        <bindings plugin="882">
+          <out endPoint="885" stubExit="//@urndef/@specDiagrams.17/@connections.2"/>
+          <out endPoint="900" stubExit="//@urndef/@specDiagrams.17/@connections.1"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+        <bindings plugin="999">
+          <in startPoint="1000" stubEntry="//@urndef/@specDiagrams.17/@connections.4"/>
+          <out endPoint="1002" stubExit="//@urndef/@specDiagrams.17/@connections.2"/>
+          <out endPoint="1011" stubExit="//@urndef/@specDiagrams.17/@connections.1"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1222" id="1222" x="381" y="258" succ="//@urndef/@specDiagrams.17/@connections.3" pred="//@urndef/@specDiagrams.17/@connections.0 //@urndef/@specDiagrams.17/@connections.5"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1224" id="1224" x="404" y="260" succ="//@urndef/@specDiagrams.17/@connections.4" pred="//@urndef/@specDiagrams.17/@connections.3" respDef="1223">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint1076" id="1076" x="408" y="342" succ="//@urndef/@specDiagrams.17/@connections.5" pred="//@urndef/@specDiagrams.17/@connections.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1066" target="1222"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1092" target="1076" outBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.0/@out.1 //@urndef/@specDiagrams.17/@nodes.2/@bindings.1/@out.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1092" target="1068" outBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.0/@out.0 //@urndef/@specDiagrams.17/@nodes.2/@bindings.1/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1222" target="1224"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1224" target="1092" inBindings="//@urndef/@specDiagrams.17/@nodes.2/@bindings.1/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1076" target="1222"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Receive Notif" toLinks="//@urnLinks.17" id="1094" parentStub="//@urndef/@specDiagrams.14/@nodes.6/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Notificationless" id="1095" x="316" y="227" succ="//@urndef/@specDiagrams.18/@connections.0" inBindings="//@urndef/@specDiagrams.14/@nodes.6/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Receive Notif" id="1097" x="647" y="226" pred="//@urndef/@specDiagrams.18/@connections.1" outBindings="//@urndef/@specDiagrams.14/@nodes.6/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1110" id="1110" x="467" y="225" succ="//@urndef/@specDiagrams.18/@connections.1" pred="//@urndef/@specDiagrams.18/@connections.0" respDef="1109">
+        <label/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="1095" target="1110"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1110" target="1097"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="windowshopping" toLinks="//@urnLinks.18" id="1231" parentStub="//@urndef/@specDiagrams.22/@nodes.10/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start shopping" id="1232" x="79" y="210" succ="//@urndef/@specDiagrams.19/@connections.0" inBindings="//@urndef/@specDiagrams.22/@nodes.10/@bindings.0/@in.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="End shopping" id="1234" x="819" y="207" pred="//@urndef/@specDiagrams.19/@connections.3" outBindings="//@urndef/@specDiagrams.22/@nodes.10/@bindings.0/@out.0" scenarioEndPoints="//@ucmspec/@scenarioGroups.0/@scenarios.1/@endPoints.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1237" id="1237" x="201" y="175" succ="//@urndef/@specDiagrams.19/@connections.1 //@urndef/@specDiagrams.19/@connections.2" pred="//@urndef/@specDiagrams.19/@connections.0"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1269" id="1269" x="684" y="210" succ="//@urndef/@specDiagrams.19/@connections.3" pred="//@urndef/@specDiagrams.19/@connections.6 //@urndef/@specDiagrams.19/@connections.10 //@urndef/@specDiagrams.19/@connections.9"/>
+      <nodes xsi:type="ucm.map:Stub" name="Window shopping" id="1270" x="389" y="105" succ="//@urndef/@specDiagrams.19/@connections.4" pred="//@urndef/@specDiagrams.19/@connections.2">
+        <label/>
+        <bindings plugin="1277">
+          <in startPoint="1284" stubEntry="//@urndef/@specDiagrams.19/@connections.2"/>
+          <out endPoint="1286" stubExit="//@urndef/@specDiagrams.19/@connections.4"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Browsing" id="1271" x="282" y="239" succ="//@urndef/@specDiagrams.19/@connections.5" pred="//@urndef/@specDiagrams.19/@connections.13">
+        <label/>
+        <bindings plugin="1371">
+          <in startPoint="1372" stubEntry="//@urndef/@specDiagrams.19/@connections.13"/>
+          <out endPoint="1394" stubExit="//@urndef/@specDiagrams.19/@connections.5"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Pay" id="1276" x="524" y="254" succ="//@urndef/@specDiagrams.19/@connections.6" pred="//@urndef/@specDiagrams.19/@connections.7">
+        <label/>
+        <bindings plugin="433">
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1292" id="1292" x="360" y="260" succ="//@urndef/@specDiagrams.19/@connections.7 //@urndef/@specDiagrams.19/@connections.8" pred="//@urndef/@specDiagrams.19/@connections.5"/>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint1391" id="1391" x="476" y="350" succ="//@urndef/@specDiagrams.19/@connections.9" pred="//@urndef/@specDiagrams.19/@connections.8"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1590" id="1590" x="505" y="139" succ="//@urndef/@specDiagrams.19/@connections.10 //@urndef/@specDiagrams.19/@connections.11" pred="//@urndef/@specDiagrams.19/@connections.4"/>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint1591" id="1591" x="394" y="178" succ="//@urndef/@specDiagrams.19/@connections.12" pred="//@urndef/@specDiagrams.19/@connections.15"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1612" id="1612" x="243" y="202" succ="//@urndef/@specDiagrams.19/@connections.13" pred="//@urndef/@specDiagrams.19/@connections.1 //@urndef/@specDiagrams.19/@connections.14"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1617" id="1617" x="321" y="190" succ="//@urndef/@specDiagrams.19/@connections.14" pred="//@urndef/@specDiagrams.19/@connections.12"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1632" id="1632" x="439" y="163" succ="//@urndef/@specDiagrams.19/@connections.15" pred="//@urndef/@specDiagrams.19/@connections.11"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1232" target="1237"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1237" target="1612">
+        <condition deltaX="118" deltaY="-68" label="windowShopping=false" expression="false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1237" target="1270" inBindings="//@urndef/@specDiagrams.19/@nodes.4/@bindings.0/@in.0">
+        <condition deltaX="113" deltaY="50" label="windowShopping=true" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1269" target="1234"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1270" target="1590" outBindings="//@urndef/@specDiagrams.19/@nodes.4/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1271" target="1292" outBindings="//@urndef/@specDiagrams.19/@nodes.5/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1276" target="1269"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1292" target="1276">
+        <condition deltaX="82" deltaY="45" label="hasItemsToBuy = true" expression="hasItemsToBuy = true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1292" target="1391">
+        <condition deltaX="108" deltaY="-22" label="hasItemsToBuy = false" expression="hasItemsToBuy=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1391" target="1269"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1590" target="1269">
+        <condition deltaX="37" deltaY="43" label="wantToEnterShop = false" expression="wantToEnterShop_=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1590" target="1632">
+        <condition deltaX="32" deltaY="-25" label="wantToEnterShop = true" expression="wantToEnterShop_=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1591" target="1617"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1612" target="1271" inBindings="//@urndef/@specDiagrams.19/@nodes.5/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1617" target="1612"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1632" target="1591"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Window shopping" toLinks="//@urnLinks.19" id="1277" parentStub="//@urndef/@specDiagrams.19/@nodes.4/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Walk by shop" id="1284" x="86" y="208" succ="//@urndef/@specDiagrams.20/@connections.0" inBindings="//@urndef/@specDiagrams.19/@nodes.4/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Walk pass shop" id="1286" x="696" y="176" pred="//@urndef/@specDiagrams.20/@connections.2" outBindings="//@urndef/@specDiagrams.19/@nodes.4/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1380" id="1380" x="282" y="208" succ="//@urndef/@specDiagrams.20/@connections.1" pred="//@urndef/@specDiagrams.20/@connections.0" respDef="1379">
+        <label deltaX="-8" deltaY="2"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1383" id="1383" x="434" y="206" succ="//@urndef/@specDiagrams.20/@connections.2 //@urndef/@specDiagrams.20/@connections.3" pred="//@urndef/@specDiagrams.20/@connections.1"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Enter shop" id="1385" x="696" y="253" pred="//@urndef/@specDiagrams.20/@connections.4">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint1388" id="1388" x="482" y="268" succ="//@urndef/@specDiagrams.20/@connections.4" pred="//@urndef/@specDiagrams.20/@connections.3"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1284" target="1380"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1380" target="1383"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1383" target="1286">
+        <condition label="enterShop=false" expression="enterShop=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1383" target="1388">
+        <condition label="enterShop=true" expression="enterShop=true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1388" target="1385"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Browsing" toLinks="//@urnLinks.20" id="1371" parentStub="//@urndef/@specDiagrams.19/@nodes.5/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Enter shop" id="1372" x="206" y="200" succ="//@urndef/@specDiagrams.21/@connections.0" inBindings="//@urndef/@specDiagrams.19/@nodes.5/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Ready to buy" id="1374" x="782" y="203" pred="//@urndef/@specDiagrams.21/@connections.9">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1392" id="1392" x="598" y="202" succ="//@urndef/@specDiagrams.21/@connections.1 //@urndef/@specDiagrams.21/@connections.2" pred="//@urndef/@specDiagrams.21/@connections.7"/>
+      <nodes xsi:type="ucm.map:EmptyPoint" name="EmptyPoint1393" id="1393" x="623" y="291" succ="//@urndef/@specDiagrams.21/@connections.3" pred="//@urndef/@specDiagrams.21/@connections.2"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Nothing to buy" id="1394" x="786" y="297" pred="//@urndef/@specDiagrams.21/@connections.3" outBindings="//@urndef/@specDiagrams.19/@nodes.5/@bindings.0/@out.0">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1396" id="1396" x="311" y="199" succ="//@urndef/@specDiagrams.21/@connections.4" pred="//@urndef/@specDiagrams.21/@connections.0" respDef="1395">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1397" id="1397" x="388" y="201" succ="//@urndef/@specDiagrams.21/@connections.5 //@urndef/@specDiagrams.21/@connections.6" pred="//@urndef/@specDiagrams.21/@connections.4"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1559" id="1559" x="565" y="201" succ="//@urndef/@specDiagrams.21/@connections.7" pred="//@urndef/@specDiagrams.21/@connections.5 //@urndef/@specDiagrams.21/@connections.8"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1561" id="1561" x="478" y="272" succ="//@urndef/@specDiagrams.21/@connections.8" pred="//@urndef/@specDiagrams.21/@connections.6" respDef="1560">
+        <label deltaX="4" deltaY="-44"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1589" id="1589" x="684" y="202" succ="//@urndef/@specDiagrams.21/@connections.9" pred="//@urndef/@specDiagrams.21/@connections.1" respDef="1588">
+        <label deltaX="-4" deltaY="-40"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="1372" target="1396"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1392" target="1589">
+        <condition deltaX="80" deltaY="34" label="hasItemsToBuy = true" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1392" target="1393">
+        <condition deltaX="49" deltaY="-46" label="hasItemsToBuy = false" expression="hasItemsToBuy=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1393" target="1394"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1396" target="1397"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1397" target="1559">
+        <condition deltaX="71" deltaY="23" label="tryProduct = false" expression="tryProduct=false" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1397" target="1561">
+        <condition deltaX="108" deltaY="1" label="tryProduct = true" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1559" target="1392"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1561" target="1559"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1589" target="1374"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Eaton Center" id="1634">
+      <nodes xsi:type="ucm.map:StartPoint" name="Entering Eaton Center" id="1646" x="6" y="202" succ="//@urndef/@specDiagrams.22/@connections.0">
+        <label deltaX="-11" deltaY="14"/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1742" id="1742" x="411" y="200" succ="//@urndef/@specDiagrams.22/@connections.1 //@urndef/@specDiagrams.22/@connections.2" pred="//@urndef/@specDiagrams.22/@connections.23"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork2053" id="2053" x="403" y="343" succ="//@urndef/@specDiagrams.22/@connections.3 //@urndef/@specDiagrams.22/@connections.4" pred="//@urndef/@specDiagrams.22/@connections.25"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2195" id="2195" x="454" y="346" succ="//@urndef/@specDiagrams.22/@connections.5" pred="//@urndef/@specDiagrams.22/@connections.4"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2196" id="2196" x="738" y="357" succ="//@urndef/@specDiagrams.22/@connections.6" pred="//@urndef/@specDiagrams.22/@connections.12"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2197" id="2197" x="414" y="503" succ="//@urndef/@specDiagrams.22/@connections.7" pred="//@urndef/@specDiagrams.22/@connections.3"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2199" id="2199" x="449" y="193" succ="//@urndef/@specDiagrams.22/@connections.8" pred="//@urndef/@specDiagrams.22/@connections.1"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2200" id="2200" x="740" y="196" succ="//@urndef/@specDiagrams.22/@connections.9" pred="//@urndef/@specDiagrams.22/@connections.10"/>
+      <nodes xsi:type="ucm.map:Stub" name="FoodCourt" id="2217" x="588" y="182" contRef="1719" succ="//@urndef/@specDiagrams.22/@connections.10" pred="//@urndef/@specDiagrams.22/@connections.8">
+        <label/>
+        <bindings plugin="3">
+          <in startPoint="144" stubEntry="//@urndef/@specDiagrams.22/@connections.8"/>
+          <out endPoint="146" stubExit="//@urndef/@specDiagrams.22/@connections.10"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Enter/Exit" id="2237" x="230" y="200" contRef="1709" succ="//@urndef/@specDiagrams.22/@connections.11 //@urndef/@specDiagrams.22/@connections.17" pred="//@urndef/@specDiagrams.22/@connections.22 //@urndef/@specDiagrams.22/@connections.13" dynamic="true">
+        <label/>
+        <bindings plugin="2244">
+          <in startPoint="2793" stubEntry="//@urndef/@specDiagrams.22/@connections.13"/>
+          <in startPoint="2520" stubEntry="//@urndef/@specDiagrams.22/@connections.22"/>
+          <out endPoint="2776" stubExit="//@urndef/@specDiagrams.22/@connections.11"/>
+          <out endPoint="2522" stubExit="//@urndef/@specDiagrams.22/@connections.17"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Shopping" id="2302" x="588" y="353" contRef="1725" succ="//@urndef/@specDiagrams.22/@connections.12" pred="//@urndef/@specDiagrams.22/@connections.5">
+        <label/>
+        <bindings plugin="1231">
+          <in startPoint="1232" stubEntry="//@urndef/@specDiagrams.22/@connections.5"/>
+          <out endPoint="1234" stubExit="//@urndef/@specDiagrams.22/@connections.12"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Miscellaneous" id="2317" x="584" y="504" contRef="1715" succ="//@urndef/@specDiagrams.22/@connections.16" pred="//@urndef/@specDiagrams.22/@connections.7">
+        <label/>
+        <bindings plugin="865">
+          <in startPoint="866" stubEntry="//@urndef/@specDiagrams.22/@connections.7"/>
+          <out endPoint="868" stubExit="//@urndef/@specDiagrams.22/@connections.16"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2426" id="2426" x="420" y="35" succ="//@urndef/@specDiagrams.22/@connections.13" pred="//@urndef/@specDiagrams.22/@connections.20"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2427" id="2427" x="773" y="37" succ="//@urndef/@specDiagrams.22/@connections.14" pred="//@urndef/@specDiagrams.22/@connections.15"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin2466" id="2466" x="802" y="176" succ="//@urndef/@specDiagrams.22/@connections.15" pred="//@urndef/@specDiagrams.22/@connections.9 //@urndef/@specDiagrams.22/@connections.24"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Left Eaton Center" id="2474" x="27" y="394" pred="//@urndef/@specDiagrams.22/@connections.21">
+        <label deltaX="-2" deltaY="-60"/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin2502" id="2502" x="805" y="348" succ="//@urndef/@specDiagrams.22/@connections.18" pred="//@urndef/@specDiagrams.22/@connections.6 //@urndef/@specDiagrams.22/@connections.19"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2507" id="2507" x="782" y="498" succ="//@urndef/@specDiagrams.22/@connections.19" pred="//@urndef/@specDiagrams.22/@connections.16"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2510" id="2510" x="578" y="27" succ="//@urndef/@specDiagrams.22/@connections.20" pred="//@urndef/@specDiagrams.22/@connections.14"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2512" id="2512" x="113" y="327" succ="//@urndef/@specDiagrams.22/@connections.21" pred="//@urndef/@specDiagrams.22/@connections.17"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2513" id="2513" x="80" y="200" succ="//@urndef/@specDiagrams.22/@connections.22" pred="//@urndef/@specDiagrams.22/@connections.0"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2514" id="2514" x="359" y="202" succ="//@urndef/@specDiagrams.22/@connections.23" pred="//@urndef/@specDiagrams.22/@connections.11"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2516" id="2516" x="807" y="257" succ="//@urndef/@specDiagrams.22/@connections.24" pred="//@urndef/@specDiagrams.22/@connections.18"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2517" id="2517" x="407" y="271" succ="//@urndef/@specDiagrams.22/@connections.25" pred="//@urndef/@specDiagrams.22/@connections.2"/>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="ComponentRef1709" id="1709" x="121" y="128" width="219" height="138" contDef="1708" nodes="2237">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="ComponentRef1715" id="1715" x="478" y="454" width="231" height="102" contDef="1714" nodes="2317">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="ComponentRef1719" id="1719" x="477" y="125" width="221" height="126" contDef="1718" nodes="2217">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="ComponentRef1725" id="1725" x="471" y="293" width="230" height="115" contDef="1724" nodes="2302">
+        <label/>
+      </contRefs>
+      <connections xsi:type="ucm.map:NodeConnection" source="1646" target="2513"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1742" target="2199">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1742" target="2517">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2053" target="2197">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2053" target="2195">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2195" target="2302" inBindings="//@urndef/@specDiagrams.22/@nodes.10/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2196" target="2502"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2197" target="2317" inBindings="//@urndef/@specDiagrams.22/@nodes.11/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2199" target="2217" inBindings="//@urndef/@specDiagrams.22/@nodes.8/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2200" target="2466"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2217" target="2200" outBindings="//@urndef/@specDiagrams.22/@nodes.8/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2237" target="2514" outBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2302" target="2196" outBindings="//@urndef/@specDiagrams.22/@nodes.10/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2426" target="2237" inBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@in.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2427" target="2510"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2466" target="2427"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2317" target="2507" outBindings="//@urndef/@specDiagrams.22/@nodes.11/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2237" target="2512" outBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@out.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2502" target="2516"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2507" target="2502"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2510" target="2426"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2512" target="2474"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2513" target="2237" inBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@in.1"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2514" target="1742"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2516" target="2466"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2517" target="2053"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="Enter/Exit Center" toLinks="//@urnLinks.9" id="2244" parentStub="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="Enter" id="2520" x="197" y="208" succ="//@urndef/@specDiagrams.23/@connections.0" inBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@in.1">
+        <label deltaX="9" deltaY="12"/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="Exit" id="2522" x="789" y="287" pred="//@urndef/@specDiagrams.23/@connections.9" outBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@out.1">
+        <label deltaX="9" deltaY="-56"/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork2538" id="2538" x="364" y="256" succ="//@urndef/@specDiagrams.23/@connections.1 //@urndef/@specDiagrams.23/@connections.2 //@urndef/@specDiagrams.23/@connections.6" pred="//@urndef/@specDiagrams.23/@connections.11"/>
+      <nodes xsi:type="ucm.map:Stub" name="Street Entrance" id="2565" x="482" y="139" succ="//@urndef/@specDiagrams.23/@connections.3" pred="//@urndef/@specDiagrams.23/@connections.2">
+        <label/>
+        <bindings plugin="797">
+          <in startPoint="844" stubEntry="//@urndef/@specDiagrams.23/@connections.2"/>
+          <out endPoint="846" stubExit="//@urndef/@specDiagrams.23/@connections.3"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin2585" id="2585" x="588" y="257" succ="//@urndef/@specDiagrams.23/@connections.4" pred="//@urndef/@specDiagrams.23/@connections.5 //@urndef/@specDiagrams.23/@connections.3"/>
+      <nodes xsi:type="ucm.map:Stub" name="Metro Entrance" id="2586" x="481" y="269" succ="//@urndef/@specDiagrams.23/@connections.5" pred="//@urndef/@specDiagrams.23/@connections.1">
+        <label/>
+        <bindings plugin="795">
+          <in startPoint="798" stubEntry="//@urndef/@specDiagrams.23/@connections.1"/>
+          <out endPoint="800" stubExit="//@urndef/@specDiagrams.23/@connections.5"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="Other Mall Entrance" id="2595" x="476" y="369" succ="//@urndef/@specDiagrams.23/@connections.7" pred="//@urndef/@specDiagrams.23/@connections.6">
+        <label deltaY="-58"/>
+        <bindings plugin="796">
+          <in startPoint="825" stubEntry="//@urndef/@specDiagrams.23/@connections.6"/>
+          <out endPoint="827" stubExit="//@urndef/@specDiagrams.23/@connections.7"/>
+          <precondition label="" expression="true"/>
+        </bindings>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin2758" id="2758" x="601" y="260" succ="//@urndef/@specDiagrams.23/@connections.8" pred="//@urndef/@specDiagrams.23/@connections.4 //@urndef/@specDiagrams.23/@connections.7"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork2774" id="2774" x="669" y="257" succ="//@urndef/@specDiagrams.23/@connections.9 //@urndef/@specDiagrams.23/@connections.10" pred="//@urndef/@specDiagrams.23/@connections.8"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="Enter" id="2776" x="788" y="219" pred="//@urndef/@specDiagrams.23/@connections.10" outBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@out.0">
+        <label deltaX="12" deltaY="11"/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin2791" id="2791" x="286" y="248" succ="//@urndef/@specDiagrams.23/@connections.11" pred="//@urndef/@specDiagrams.23/@connections.0 //@urndef/@specDiagrams.23/@connections.12"/>
+      <nodes xsi:type="ucm.map:StartPoint" name="Exit" id="2793" x="194" y="281" succ="//@urndef/@specDiagrams.23/@connections.12" inBindings="//@urndef/@specDiagrams.22/@nodes.9/@bindings.0/@in.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="2520" target="2791"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2538" target="2586" inBindings="//@urndef/@specDiagrams.23/@nodes.5/@bindings.0/@in.0">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2538" target="2565" inBindings="//@urndef/@specDiagrams.23/@nodes.3/@bindings.0/@in.0">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2565" target="2585" outBindings="//@urndef/@specDiagrams.23/@nodes.3/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2585" target="2758"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2586" target="2585" outBindings="//@urndef/@specDiagrams.23/@nodes.5/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2538" target="2595" inBindings="//@urndef/@specDiagrams.23/@nodes.6/@bindings.0/@in.0">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2595" target="2758" outBindings="//@urndef/@specDiagrams.23/@nodes.6/@bindings.0/@out.0"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2758" target="2774"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2774" target="2522">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2774" target="2776">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="2791" target="2538"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="2793" target="2791"/>
+    </specDiagrams>
+    <components name="Entrance" id="1708" contRefs="1709"/>
+    <components name="Component1710" id="1710"/>
+    <components name="Miscellaneous" id="1714" contRefs="1715"/>
+    <components name="Food Court" id="1718" contRefs="1719"/>
+    <components name="Shopping" id="1724" contRefs="1725"/>
+  </urndef>
+  <urnLinks type="URNLink" fromElem="17" toElem="3"/>
+  <urnLinks type="URNLink" fromElem="42" toElem="198"/>
+  <urnLinks type="URNLink" fromElem="44" toElem="183"/>
+  <urnLinks type="URNLink" fromElem="46" toElem="287"/>
+  <urnLinks type="URNLink" fromElem="48" toElem="781"/>
+  <urnLinks type="URNLink" fromElem="83" toElem="433"/>
+  <urnLinks type="URNLink" fromElem="85" toElem="353"/>
+  <urnLinks type="URNLink" fromElem="87" toElem="705"/>
+  <urnLinks type="URNLink" fromElem="89" toElem="704"/>
+  <urnLinks type="URNLink" fromElem="15" toElem="2244"/>
+  <urnLinks type="URNLink" fromElem="34" toElem="795"/>
+  <urnLinks type="URNLink" fromElem="36" toElem="796"/>
+  <urnLinks type="URNLink" fromElem="38" toElem="797"/>
+  <urnLinks type="URNLink" fromElem="19" toElem="865"/>
+  <urnLinks type="URNLink" fromElem="60" toElem="1065"/>
+  <urnLinks type="URNLink" fromElem="64" toElem="882"/>
+  <urnLinks type="URNLink" fromElem="66" toElem="999"/>
+  <urnLinks type="URNLink" fromElem="62" toElem="1094"/>
+  <urnLinks type="URNLink" fromElem="21" toElem="1231"/>
+  <urnLinks type="URNLink" fromElem="75" toElem="1277"/>
+  <urnLinks type="URNLink" fromElem="77" toElem="1371"/>
+  <urnLinks type="URNLink" fromElem="2809" toElem="705"/>
+  <urnLinks type="URNLink" fromElem="2811" toElem="704"/>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+  <metadata name="UrnLinkType" value="URNLink"/>
+</urn:URNspec>
