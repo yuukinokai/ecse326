@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 10, 2019 8:56:18 PM EST" modified="November 10, 2019 11:20:12 PM EST" specVersion="47" urnVersion="1.27" nextGlobalID="3307">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="yuxinzhou" created="November 10, 2019 8:56:18 PM EST" modified="November 26, 2019 11:41:50 PM EST" specVersion="48" urnVersion="1.27" nextGlobalID="3310">
   <ucmspec>
     <scenarioGroups name="Worker Scenario" id="7">
       <scenarios name="pay lunch with points" id="2952">
@@ -46,73 +46,209 @@
     <variables name="enterShop" id="3199"/>
   </ucmspec>
   <grlspec>
-    <intElements xsi:type="fm:Feature" name="Montreal Eaton Center" id="13" linksDest="27 30 31 32" type="Task" refs="14"/>
+    <intElements xsi:type="fm:Feature" name="Montreal Eaton Center" id="13" linksDest="27 30 31 32" type="Task" refs="14">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Entering/Exiting" fromLinks="//@urnLinks.9" id="15" linksDest="120 117 118" linksSrc="27" type="Task" decompositionType="Xor" refs="16">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_autoSelected" value="20191110-125010562"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Food Court" fromLinks="//@urnLinks.0" id="17" linksDest="112 121" linksSrc="30 2866" type="Task" decompositionType="Or" refs="18 2863">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Miscellaneous" fromLinks="//@urnLinks.13" id="19" linksDest="2822 2823" linksSrc="31" type="Task" decompositionType="Or" refs="20">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Shopping" fromLinks="//@urnLinks.18" id="21" linksDest="106 107" linksSrc="32" type="Task" decompositionType="Or" refs="22">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Metro" fromLinks="//@urnLinks.10" id="34" linksSrc="120 2859" type="Task" importance="High" importanceQuantitative="100" refs="35 2851"/>
-    <intElements xsi:type="fm:Feature" name="other mall" fromLinks="//@urnLinks.11" id="36" linksSrc="118 2860 2916" type="Task" importance="High" importanceQuantitative="75" refs="37 2855"/>
-    <intElements xsi:type="fm:Feature" name="street" fromLinks="//@urnLinks.12" id="38" linksSrc="117 2858 2918" type="Task" importance="Low" importanceQuantitative="25" refs="39 2853" selectable="true"/>
-    <intElements xsi:type="fm:Feature" name="eating" fromLinks="//@urnLinks.1" id="42" linksDest="114 115" linksSrc="112" type="Task" decompositionType="Or" refs="43"/>
-    <intElements xsi:type="fm:Feature" name="chilling" fromLinks="//@urnLinks.2" id="44" linksSrc="121" type="Task" refs="45"/>
-    <intElements xsi:type="fm:Feature" name="ordering" fromLinks="//@urnLinks.3" id="46" linksDest="140 142" linksSrc="114" type="Task" refs="47"/>
-    <intElements xsi:type="fm:Feature" name="bring own" fromLinks="//@urnLinks.4" id="48" linksSrc="115 2896" type="Task" refs="49 2893"/>
+    <intElements xsi:type="fm:Feature" name="Metro" fromLinks="//@urnLinks.10" id="34" linksSrc="120 2859" type="Task" importance="High" importanceQuantitative="100" refs="35 2851">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="other mall" fromLinks="//@urnLinks.11" id="36" linksSrc="118 2860 2916" type="Task" importance="High" importanceQuantitative="75" refs="37 2855">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="street" fromLinks="//@urnLinks.12" id="38" linksSrc="117 2858 2918" type="Task" importance="Low" importanceQuantitative="25" refs="39 2853" selectable="true">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="eating" fromLinks="//@urnLinks.1" id="42" linksDest="114 115" linksSrc="112" type="Task" decompositionType="Or" refs="43">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="chilling" fromLinks="//@urnLinks.2" id="44" linksSrc="121" type="Task" refs="45">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="ordering" fromLinks="//@urnLinks.3" id="46" linksDest="140 142" linksSrc="114" type="Task" refs="47">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="bring own" fromLinks="//@urnLinks.4" id="48" linksSrc="115 2896" type="Task" refs="49 2893">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Wifi" fromLinks="//@urnLinks.14" id="60" linksDest="110 111" linksSrc="2822 2946" type="Task" decompositionType="Xor" refs="61 2941">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Receving Notifications" fromLinks="//@urnLinks.17" id="62" linksSrc="2823 2947" type="Task" refs="63 2943">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="normal connection" fromLinks="//@urnLinks.15" id="64" linksSrc="110" type="Task" refs="65"/>
-    <intElements xsi:type="fm:Feature" name="connecting through app" fromLinks="//@urnLinks.16" id="66" linksSrc="111" type="Task" refs="67"/>
-    <intElements xsi:type="fm:Feature" name="Window shopping" fromLinks="//@urnLinks.19" id="75" linksSrc="106 2908 2909" type="Task" refs="76 2905"/>
-    <intElements xsi:type="fm:Feature" name="Browsing through" fromLinks="//@urnLinks.20" id="77" linksDest="122" linksSrc="107" type="Task" refs="78"/>
+    <intElements xsi:type="fm:Feature" name="normal connection" fromLinks="//@urnLinks.15" id="64" linksSrc="110" type="Task" refs="65">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="connecting through app" fromLinks="//@urnLinks.16" id="66" linksSrc="111" type="Task" refs="67">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Window shopping" fromLinks="//@urnLinks.19" id="75" linksSrc="106 2908 2909" type="Task" refs="76 2905">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Browsing through" fromLinks="//@urnLinks.20" id="77" linksDest="122" linksSrc="107" type="Task" refs="78">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Purchasing" id="79" linksDest="132 2807" linksSrc="122 2925" type="Task" refs="80 2922">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="paying for food" fromLinks="//@urnLinks.5" id="83" linksDest="128 129" linksSrc="140" type="Task" decompositionType="Xor" refs="138">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="receiving points" fromLinks="//@urnLinks.6" id="85" linksSrc="132 142 2915 2950" type="Task" refs="86 137 2869">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="paying normally" fromLinks="//@urnLinks.7" id="87" linksSrc="128" type="Task" refs="139"/>
-    <intElements xsi:type="fm:Feature" name="paying with points" fromLinks="//@urnLinks.8" id="89" linksSrc="129 2911 2949" type="Task" refs="136 2887"/>
+    <intElements xsi:type="fm:Feature" name="paying normally" fromLinks="//@urnLinks.7" id="87" linksSrc="128" type="Task" refs="139">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="paying with points" fromLinks="//@urnLinks.8" id="89" linksSrc="129 2911 2949" type="Task" refs="136 2887">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Paying for articles" id="2798" linksDest="2816 2817" linksSrc="2807" type="Task" decompositionType="Xor" refs="2799">
       <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Paying by Card/Cash" fromLinks="//@urnLinks.21" id="2809" linksSrc="2816" type="Task" refs="2810"/>
-    <intElements xsi:type="fm:Feature" name="Paying by Points" fromLinks="//@urnLinks.22" id="2811" linksSrc="2817" type="Task" refs="2812"/>
-    <intElements name="Easy access to work" id="2836" linksDest="2858 2859 2860" importance="Medium" importanceQuantitative="50" refs="2837"/>
-    <intElements name="Easy access to food" id="2838" linksDest="2866 2916 2918" importance="Medium" importanceQuantitative="50" refs="2839"/>
-    <intElements name="Minimize lineup time to buy food" id="2844" linksSrc="2902" type="Goal" importance="Medium" importanceQuantitative="50" refs="2845"/>
-    <intElements name="Minimize amount of money spend on food" id="2846" linksDest="2896 2932" linksSrc="2884" type="Goal" importance="High" importanceQuantitative="75" refs="2847"/>
-    <intElements name="Task2850" id="2850" type="Task"/>
-    <intElements name="Task2852" id="2852" type="Task"/>
-    <intElements name="Task2854" id="2854" type="Task"/>
-    <intElements name="Task2862" id="2862" type="Task"/>
-    <intElements name="Task2868" id="2868" type="Task"/>
-    <intElements name="Save money" id="2880" linksDest="2884 2909 2911 2915 2925" importance="High" importanceQuantitative="100" refs="2881"/>
-    <intElements name="Task2886" id="2886" type="Task"/>
-    <intElements name="Task2892" id="2892" type="Task"/>
-    <intElements name="Maximizing lunch break hour" id="2898" linksDest="2902 2908" type="Goal" importance="Medium" importanceQuantitative="50" refs="2899"/>
-    <intElements name="Task2904" id="2904" type="Task"/>
-    <intElements name="Task2921" id="2921" type="Task"/>
-    <intElements name="Ordering food" id="2927" linksSrc="2932" type="Task" refs="2928"/>
-    <intElements name="Achieve sales goal" id="2934" linksDest="2946 2947 2949 2950" type="Goal" importance="High" importanceQuantitative="100" refs="2935"/>
-    <intElements name="Task2940" id="2940" type="Task"/>
-    <intElements name="Task2942" id="2942" type="Task"/>
-    <actors name="Employee" id="2830" contRefs="2831" importance="Medium" importanceQuantitative="50"/>
+    <intElements xsi:type="fm:Feature" name="Paying by Card/Cash" fromLinks="//@urnLinks.21" id="2809" linksSrc="2816" type="Task" refs="2810">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Paying by Points" fromLinks="//@urnLinks.22" id="2811" linksSrc="2817" type="Task" refs="2812">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Easy access to work" id="2836" linksDest="2858 2859 2860" importance="Medium" importanceQuantitative="50" refs="2837">
+      <metadata name="_numEval" value="25"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Easy access to food" id="2838" linksDest="2866 2916 2918" importance="Medium" importanceQuantitative="50" refs="2839">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements name="Minimize lineup time to buy food" id="2844" linksSrc="2902" type="Goal" importance="Medium" importanceQuantitative="50" refs="2845">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Minimize amount of money spend on food" id="2846" linksDest="2896 2932" linksSrc="2884" type="Goal" importance="High" importanceQuantitative="75" refs="2847">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements name="Task2850" id="2850" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2852" id="2852" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2854" id="2854" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2862" id="2862" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2868" id="2868" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Save money" id="2880" linksDest="2884 2909 2911 2915 2925" importance="High" importanceQuantitative="100" refs="2881">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Task2886" id="2886" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2892" id="2892" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Maximizing lunch break hour" id="2898" linksDest="2902 2908" type="Goal" importance="Medium" importanceQuantitative="50" refs="2899">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Task2904" id="2904" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2921" id="2921" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Ordering food" id="2927" linksSrc="2932" type="Task" refs="2928">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Achieve sales goal" id="2934" linksDest="2946 2947 2949 2950" type="Goal" importance="High" importanceQuantitative="100" refs="2935">
+      <metadata name="_numEval" value="25"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Task2940" id="2940" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Task2942" id="2942" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <actors name="Employee" id="2830" contRefs="2831" importance="Medium" importanceQuantitative="50">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </actors>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory27" id="27" refs="//@urndef/@specDiagrams.1/@connections.0" dest="13" src="15" quantitativeContribution="100"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional30" id="30" refs="//@urndef/@specDiagrams.1/@connections.1" dest="13" src="17" quantitativeContribution="0"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional31" id="31" refs="//@urndef/@specDiagrams.1/@connections.2" dest="13" src="19" quantitativeContribution="0"/>
@@ -159,6 +295,7 @@
     <links xsi:type="grl:Contribution" name="Contribution2949" id="2949" refs="//@urndef/@specDiagrams.0/@connections.17" dest="2934" src="89" contribution="Make" quantitativeContribution="100"/>
     <links xsi:type="grl:Contribution" name="Contribution2950" id="2950" refs="//@urndef/@specDiagrams.0/@connections.18" dest="2934" src="85" contribution="Make" quantitativeContribution="100"/>
     <groups name="StrategiesGroup5" id="5" strategies="6 2825 2827 2829"/>
+    <groups name="Stakeholder" id="3308" strategies="3309 3310"/>
     <strategies name="TrendyTeenager_KamyMoussavikafi" id="6" author="yuxinzhou" group="5">
       <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
         <kpiEvalValueSet/>
@@ -254,6 +391,46 @@
         <kpiEvalValueSet/>
       </evaluations>
       <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="75">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Employee_System_as_is" id="3309" author="kamym" group="3308">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="87">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="48">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="64">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="2809">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="75">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Employee_Future_System" id="3310" author="kamym" group="3308">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="89">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="38">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="85">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="66">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="2811">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="62">
         <kpiEvalValueSet/>
       </evaluations>
     </strategies>
